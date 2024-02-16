@@ -1,0 +1,6 @@
+C:\Users\micka\source\repos\e-Teacher\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\micka\source\repos\e-Teacher\Domain\bin\Debug\Domain.dll.config
+C:\Users\micka\source\repos\e-Teacher\Domain\bin\Debug\Domain.dll
+C:\Users\micka\source\repos\e-Teacher\Domain\bin\Debug\Domain.pdb
+C:\Users\micka\source\repos\e-Teacher\Domain\obj\Debug\Domain.dll
+C:\Users\micka\source\repos\e-Teacher\Domain\obj\Debug\Domain.pdb
