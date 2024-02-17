@@ -22,14 +22,19 @@ namespace Presentation
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+            materialSkinManager.ColorScheme = new ColorScheme(
+           Primary.Grey800, Primary.Grey900,
+           Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
             UpdateGrid();
         }
 
         private void UpdateGrid()
         {
             CoursesManager courses = new CoursesManager();
+
+            dgvCourses.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgvCourses.RowHeadersVisible = false;
 
             try
             {
@@ -44,6 +49,8 @@ namespace Presentation
                     row.Cells[3].Value = c.Level;
                 }
 
+
+
             }
             catch (Exception ex)
             {
@@ -54,5 +61,6 @@ namespace Presentation
 
 
         }
+
     }
 }
