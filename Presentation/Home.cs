@@ -24,8 +24,10 @@ namespace Presentation
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(
-           Primary.Grey800, Primary.Grey900,
-           Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            Primary.Grey800, Primary.Grey900,
+            Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            //monthCalendar.
+            UpdateDiary();
             UpdateGrid();
         }
 
@@ -39,7 +41,8 @@ namespace Presentation
             try
             {
                 listCourses = courses.ListCourses();
-                foreach (Courses c in listCourses) {
+                foreach (Courses c in listCourses)
+                {
 
                     int rowIndex = dgvCourses.Rows.Add();
                     DataGridViewRow row = dgvCourses.Rows[rowIndex];
@@ -62,5 +65,13 @@ namespace Presentation
 
         }
 
+        private void UpdateDiary()
+        {
+
+
+
+        }
+
     }
 }
+
