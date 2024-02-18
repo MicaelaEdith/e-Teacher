@@ -9,11 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Domain;
+using Business;
 
 namespace Presentation
 {
     public partial class Admin : MaterialForm
-    {
+    {        
         public Admin()
         {
             InitializeComponent();
@@ -51,7 +53,9 @@ namespace Presentation
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(cbxItems.SelectedIndex==0)
+            btnDelete.Visible = false;
+            btnUpdate.Visible = false;
+            if (cbxItems.SelectedIndex==0)
                 OpenPanel(new AdminNewCourse());
             else
                 OpenPanel(new AdminAddStudent());
@@ -60,19 +64,32 @@ namespace Presentation
         private void btnList_Click(object sender, EventArgs e)
         {
             OpenPanel(new AdminList(cbxItems.SelectedIndex));
+            btnDelete.Visible = true;
+            btnUpdate.Visible = true;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if(cbxItems.SelectedIndex == 0)
+            {
                 OpenPanel(new AdminUpdate());
+
+            }
             else
+            {
                 OpenPanel(new AdminUpdateStudent());
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            OpenPanel(new AdminDelete());
+           
+                StudentsManager sm = new StudentsManager();
+                sm.Delete(AppData.id);
+                OpenPanel(new AdminUpdateStudent());
+
         }
+
+
     }
 }

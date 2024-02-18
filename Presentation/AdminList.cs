@@ -28,26 +28,14 @@ namespace Presentation
 
         private void UpdateCourses()
         {
-            CoursesManager courses = new CoursesManager();
-
-            dgvList.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
-            dgvList.RowHeadersVisible = false;
-            dgvList.Rows[4].Visible = false;
-            dgvList.Rows[5].Visible = false;
+                CoursesManager courses = new CoursesManager();
+                listCourses = courses.ListCourses();
 
             try
             {
-                listCourses = courses.ListCourses();
-                foreach (Courses c in listCourses)
-                {
-
-                    int rowIndex = dgvList.Rows.Add();
-                    DataGridViewRow row = dgvList.Rows[rowIndex];
-                    row.Cells[0].Value = c.CoursesClasses.ToUpper();
-                    row.Cells[1].Value = c.Days;
-                    row.Cells[2].Value = c.Institution;
-                    row.Cells[3].Value = c.Level;
-                }
+                dgvList.DataSource = listCourses;
+                dgvList.Columns["id"].Visible = false;
+                dgvList.ClearSelection();
 
             }
             catch (Exception ex)
@@ -55,31 +43,21 @@ namespace Presentation
 
                 throw ex;
             }
+
 
         }
 
         private void UpdateStudents()
         {
             StudentsManager students = new StudentsManager();
+            listStudents = students.ListStudents();
 
-            dgvList.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
-            dgvList.RowHeadersVisible = false;
-            dgvList.Rows[0].Visible = false;
-            dgvList.Rows[1].Visible = false;
-            dgvList.Rows[2].Visible = false;
-            dgvList.Rows[3].Visible = false;
             try
             {
-                listStudents = students.ListStudents();
-                foreach (Student s in listStudents)
-                {
+                dgvList.DataSource = listStudents;
+                dgvList.Columns["id"].Visible = false;
+                dgvList.ClearSelection();
 
-                    int rowIndex = dgvList.Rows.Add();
-                    DataGridViewRow row = dgvList.Rows[rowIndex];
-                    row.Cells[4].Value = s.Name.ToUpper();
-                    row.Cells[5].Value = s.LastName;
-;
-                }
             }
             catch (Exception ex)
             {
@@ -88,5 +66,30 @@ namespace Presentation
             }
         }
 
+
+        /// check this 
+        ///          ↓
+        
+
+
+        public event EventHandler<int> StudentSelected;
+        private void dgvList_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvList.SelectedRows.Count != 0)
+            {
+                DataGridViewRow selectedRow = dgvList.SelectedRows[0];
+
+                object idValue = selectedRow.Cells["id"].Value;
+
+                if (idValue != null)
+                {
+                    int studentId = Convert.ToInt32(idValue);
+                    AppData.id = studentId;
+
+                    StudentSelected?.Invoke(this, studentId);
+                }
+            }
+
+        }
     }
 }

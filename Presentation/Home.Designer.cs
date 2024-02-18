@@ -43,9 +43,6 @@ namespace Presentation
             this.Nivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.dgvDiary = new System.Windows.Forms.DataGridView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.btnAdmin = new MaterialSkin.Controls.MaterialButton();
             this.Lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Miercoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +50,9 @@ namespace Presentation
             this.Viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sabado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Domingo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.btnAdmin = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiary)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +61,7 @@ namespace Presentation
             // 
             this.dgvCourses.AllowUserToAddRows = false;
             this.dgvCourses.AllowUserToDeleteRows = false;
-            this.dgvCourses.AllowUserToOrderColumns = true;
+            this.dgvCourses.AllowUserToResizeColumns = false;
             this.dgvCourses.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
@@ -86,6 +86,7 @@ namespace Presentation
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCourses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCourses.ColumnHeadersHeight = 42;
+            this.dgvCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCourses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Curso,
             this.DiaHorario,
@@ -104,7 +105,9 @@ namespace Presentation
             this.dgvCourses.EnableHeadersVisualStyles = false;
             this.dgvCourses.GridColor = System.Drawing.SystemColors.Control;
             this.dgvCourses.Location = new System.Drawing.Point(60, 80);
+            this.dgvCourses.MultiSelect = false;
             this.dgvCourses.Name = "dgvCourses";
+            this.dgvCourses.ReadOnly = true;
             this.dgvCourses.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvCourses.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvCourses.RowTemplate.Height = 35;
@@ -117,24 +120,28 @@ namespace Presentation
             this.Curso.FillWeight = 65.65144F;
             this.Curso.HeaderText = "Curso";
             this.Curso.Name = "Curso";
+            this.Curso.ReadOnly = true;
             // 
             // DiaHorario
             // 
             this.DiaHorario.FillWeight = 203.0457F;
             this.DiaHorario.HeaderText = "Dia - Horario";
             this.DiaHorario.Name = "DiaHorario";
+            this.DiaHorario.ReadOnly = true;
             // 
             // Institucion
             // 
             this.Institucion.FillWeight = 65.65144F;
             this.Institucion.HeaderText = "Institucion";
             this.Institucion.Name = "Institucion";
+            this.Institucion.ReadOnly = true;
             // 
             // Nivel
             // 
             this.Nivel.FillWeight = 65.65144F;
             this.Nivel.HeaderText = "Nivel";
             this.Nivel.Name = "Nivel";
+            this.Nivel.ReadOnly = true;
             // 
             // monthCalendar
             // 
@@ -191,51 +198,6 @@ namespace Presentation
             this.dgvDiary.Size = new System.Drawing.Size(248, 89);
             this.dgvDiary.TabIndex = 2;
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Location = new System.Drawing.Point(3, 64);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1094, 24);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // materialCard1
-            // 
-            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Depth = 0;
-            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(784, 353);
-            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(251, 118);
-            this.materialCard1.TabIndex = 4;
-            // 
-            // btnAdmin
-            // 
-            this.btnAdmin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnAdmin.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAdmin.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnAdmin.Depth = 0;
-            this.btnAdmin.ForeColor = System.Drawing.Color.Black;
-            this.btnAdmin.HighEmphasis = true;
-            this.btnAdmin.Icon = null;
-            this.btnAdmin.Location = new System.Drawing.Point(60, 475);
-            this.btnAdmin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnAdmin.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnAdmin.Size = new System.Drawing.Size(118, 36);
-            this.btnAdmin.TabIndex = 5;
-            this.btnAdmin.Text = "Administrar";
-            this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnAdmin.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnAdmin.UseAccentColor = false;
-            this.btnAdmin.UseVisualStyleBackColor = false;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
-            // 
             // Lunes
             // 
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -281,6 +243,51 @@ namespace Presentation
             this.Domingo.HeaderText = "D";
             this.Domingo.Name = "Domingo";
             this.Domingo.ReadOnly = true;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(3, 64);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1094, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // materialCard1
+            // 
+            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Depth = 0;
+            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard1.Location = new System.Drawing.Point(784, 353);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard1.Name = "materialCard1";
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard1.Size = new System.Drawing.Size(251, 118);
+            this.materialCard1.TabIndex = 4;
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAdmin.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAdmin.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnAdmin.Depth = 0;
+            this.btnAdmin.ForeColor = System.Drawing.Color.Black;
+            this.btnAdmin.HighEmphasis = true;
+            this.btnAdmin.Icon = null;
+            this.btnAdmin.Location = new System.Drawing.Point(60, 475);
+            this.btnAdmin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAdmin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnAdmin.Size = new System.Drawing.Size(118, 36);
+            this.btnAdmin.TabIndex = 5;
+            this.btnAdmin.Text = "Administrar";
+            this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAdmin.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnAdmin.UseAccentColor = false;
+            this.btnAdmin.UseVisualStyleBackColor = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // Home
             // 

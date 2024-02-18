@@ -115,7 +115,7 @@ namespace Presentation
             this.btnDelete.UseAccentColor = false;
             this.btnDelete.UseMnemonic = false;
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Visible = false;
             // 
             // btnAdd
             // 
@@ -157,6 +157,7 @@ namespace Presentation
             this.btnUpdate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnUpdate.UseAccentColor = false;
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Visible = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // pnlAdmin

@@ -29,14 +29,12 @@ namespace Presentation
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.dgvList = new System.Windows.Forms.DataGridView();
-            this.Course = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Days = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Institution = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Level = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,49 +52,59 @@ namespace Presentation
             // 
             // dgvList
             // 
-            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Course,
-            this.Days,
-            this.Institution,
-            this.Level,
-            this.Name,
-            this.LastName});
-            this.dgvList.Location = new System.Drawing.Point(55, 34);
+            this.dgvList.AllowUserToAddRows = false;
+            this.dgvList.AllowUserToDeleteRows = false;
+            this.dgvList.AllowUserToResizeColumns = false;
+            this.dgvList.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Gray;
+            this.dgvList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvList.BackgroundColor = System.Drawing.Color.White;
+            this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvList.ColumnHeadersHeight = 42;
+            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvList.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvList.EnableHeadersVisualStyles = false;
+            this.dgvList.Location = new System.Drawing.Point(12, 12);
+            this.dgvList.MultiSelect = false;
             this.dgvList.Name = "dgvList";
+            this.dgvList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvList.RowHeadersVisible = false;
-            this.dgvList.Size = new System.Drawing.Size(490, 380);
+            this.dgvList.RowTemplate.Height = 28;
+            this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvList.Size = new System.Drawing.Size(407, 323);
             this.dgvList.TabIndex = 1;
-            // 
-            // Course
-            // 
-            this.Course.HeaderText = "Curso";
-            this.Course.Name = "Course";
-            // 
-            // Days
-            // 
-            this.Days.HeaderText = "Dias y Horario";
-            this.Days.Name = "Days";
-            // 
-            // Institution
-            // 
-            this.Institution.HeaderText = "Institución";
-            this.Institution.Name = "Institution";
-            // 
-            // Level
-            // 
-            this.Level.HeaderText = "Nivel";
-            this.Level.Name = "Level";
-            // 
-            // Name
-            // 
-            this.Name.HeaderText = "Nombre";
-            this.Name.Name = "Name";
-            // 
-            // LastName
-            // 
-            this.LastName.HeaderText = "Apellido";
-            this.LastName.Name = "LastName";
+            this.dgvList.SelectionChanged += new System.EventHandler(this.dgvList_SelectionChanged);
             // 
             // AdminList
             // 
@@ -121,11 +129,5 @@ namespace Presentation
 
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.DataGridView dgvList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Course;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Days;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Institution;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Level;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
     }
 }
