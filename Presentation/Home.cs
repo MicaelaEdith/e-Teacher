@@ -17,6 +17,7 @@ namespace Presentation
     public partial class Home : MaterialForm
     {
         private List<Courses> listCourses;
+       
         public Home()
         {
             InitializeComponent();
@@ -26,9 +27,9 @@ namespace Presentation
             materialSkinManager.ColorScheme = new ColorScheme(
             Primary.Grey900, Primary.Grey900,
             Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
-            //monthCalendar.
             UpdateDiary();
             UpdateGrid();
+            
         }
 
         private void UpdateGrid()

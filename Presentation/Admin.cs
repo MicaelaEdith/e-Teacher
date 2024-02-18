@@ -24,7 +24,6 @@ namespace Presentation
             Primary.Grey900, Primary.Grey900,
             Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
             AddItems();
-            
         }
 
         private Form activeForm = null;
@@ -38,6 +37,7 @@ namespace Presentation
             form.Dock = DockStyle.Fill;
             pnlAdmin.Controls.Add(form);
             pnlAdmin.Tag = form;
+            form.Tag = this;
             form.Show();
         
         }
@@ -46,11 +46,15 @@ namespace Presentation
 
             cbxItems.Items.Add("Cursos");
             cbxItems.Items.Add("Alumnos");
+            cbxItems.SelectedIndex=0;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            OpenPanel(new AdminNewCourse());
+            if(cbxItems.SelectedIndex==0)
+                OpenPanel(new AdminNewCourse());
+            else
+                OpenPanel(new AdminAddStudent());
         }
 
         private void btnList_Click(object sender, EventArgs e)

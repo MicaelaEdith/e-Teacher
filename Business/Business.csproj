@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="CoursesManager.cs" />
     <Compile Include="DataAccess.cs" />
+    <Compile Include="StudentsManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -28,12 +28,30 @@ namespace Presentation
             c.Level = txtLevel.Text;
 
             CoursesManager cm = new CoursesManager();
-            cm.AddCourse(c);
+
+            if (txtCourse.Text != "" && txtCourse != null &&
+                txtDays.Text != "" && txtDays != null &&
+                txtInstitute.Text != "" && txtInstitute != null &&
+                txtLevel.Text != "" && txtLevel != null)
+            {
+                cm.AddCourse(c);
+                if (this.Tag is Admin parentForm)
+                {
+                    parentForm.Close();
+                }
+
+            }
+            else
+                lblWarning.Visible = true;
 
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            if (this.Tag is Admin parentForm)
+            {
+                parentForm.Close();
+            }
 
         }
     }
