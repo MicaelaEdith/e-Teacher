@@ -59,12 +59,15 @@ namespace Presentation
 
         private void btnList_Click(object sender, EventArgs e)
         {
-            OpenPanel(new AdminList());
+            OpenPanel(new AdminList(cbxItems.SelectedIndex));
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            OpenPanel(new AdminUpdate());
+            if(cbxItems.SelectedIndex == 0)
+                OpenPanel(new AdminUpdate());
+            else
+                OpenPanel(new AdminUpdateStudent());
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

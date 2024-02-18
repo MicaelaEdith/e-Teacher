@@ -31,11 +31,11 @@ namespace Presentation
         {
             this.cbxItems = new MaterialSkin.Controls.MaterialComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlAdmin = new System.Windows.Forms.Panel();
-            this.btnUpdate = new MaterialSkin.Controls.MaterialButton();
-            this.btnAdd = new MaterialSkin.Controls.MaterialButton();
-            this.btnDelete = new MaterialSkin.Controls.MaterialButton();
             this.btnList = new MaterialSkin.Controls.MaterialButton();
+            this.btnDelete = new MaterialSkin.Controls.MaterialButton();
+            this.btnAdd = new MaterialSkin.Controls.MaterialButton();
+            this.btnUpdate = new MaterialSkin.Controls.MaterialButton();
+            this.pnlAdmin = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +48,7 @@ namespace Presentation
             this.cbxItems.DropDownHeight = 174;
             this.cbxItems.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxItems.DropDownWidth = 121;
-            this.cbxItems.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbxItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cbxItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cbxItems.FormattingEnabled = true;
             this.cbxItems.IntegralHeight = false;
@@ -74,58 +74,31 @@ namespace Presentation
             this.panel1.Size = new System.Drawing.Size(185, 443);
             this.panel1.TabIndex = 4;
             // 
-            // pnlAdmin
+            // btnList
             // 
-            this.pnlAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.pnlAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlAdmin.Location = new System.Drawing.Point(188, 64);
-            this.pnlAdmin.Name = "pnlAdmin";
-            this.pnlAdmin.Size = new System.Drawing.Size(634, 443);
-            this.pnlAdmin.TabIndex = 5;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.AutoSize = false;
-            this.btnUpdate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnUpdate.Depth = 0;
-            this.btnUpdate.HighEmphasis = true;
-            this.btnUpdate.Icon = null;
-            this.btnUpdate.Location = new System.Drawing.Point(25, 210);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnUpdate.Size = new System.Drawing.Size(133, 38);
-            this.btnUpdate.TabIndex = 4;
-            this.btnUpdate.Text = "Modificar";
-            this.btnUpdate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnUpdate.UseAccentColor = false;
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.AutoSize = false;
-            this.btnAdd.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnAdd.Depth = 0;
-            this.btnAdd.HighEmphasis = true;
-            this.btnAdd.Icon = null;
-            this.btnAdd.Location = new System.Drawing.Point(25, 160);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnAdd.Size = new System.Drawing.Size(133, 38);
-            this.btnAdd.TabIndex = 5;
-            this.btnAdd.Text = "Agregar";
-            this.btnAdd.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnAdd.UseAccentColor = false;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnList.AutoSize = false;
+            this.btnList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnList.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnList.Depth = 0;
+            this.btnList.HighEmphasis = true;
+            this.btnList.Icon = null;
+            this.btnList.Location = new System.Drawing.Point(25, 110);
+            this.btnList.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnList.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnList.Name = "btnList";
+            this.btnList.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnList.Size = new System.Drawing.Size(133, 38);
+            this.btnList.TabIndex = 7;
+            this.btnList.Text = "Listar";
+            this.btnList.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnList.UseAccentColor = false;
+            this.btnList.UseVisualStyleBackColor = true;
+            this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.AutoSize = false;
+            this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnDelete.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnDelete.Depth = 0;
             this.btnDelete.HighEmphasis = true;
@@ -144,25 +117,58 @@ namespace Presentation
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnList
+            // btnAdd
             // 
-            this.btnList.AutoSize = false;
-            this.btnList.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnList.Depth = 0;
-            this.btnList.HighEmphasis = true;
-            this.btnList.Icon = null;
-            this.btnList.Location = new System.Drawing.Point(25, 110);
-            this.btnList.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnList.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnList.Name = "btnList";
-            this.btnList.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnList.Size = new System.Drawing.Size(133, 38);
-            this.btnList.TabIndex = 7;
-            this.btnList.Text = "Listar";
-            this.btnList.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnList.UseAccentColor = false;
-            this.btnList.UseVisualStyleBackColor = true;
-            this.btnList.Click += new System.EventHandler(this.btnList_Click);
+            this.btnAdd.AutoSize = false;
+            this.btnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAdd.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnAdd.Depth = 0;
+            this.btnAdd.HighEmphasis = true;
+            this.btnAdd.Icon = null;
+            this.btnAdd.Location = new System.Drawing.Point(25, 160);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnAdd.Size = new System.Drawing.Size(133, 38);
+            this.btnAdd.TabIndex = 5;
+            this.btnAdd.Text = "Agregar";
+            this.btnAdd.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnAdd.UseAccentColor = false;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.AutoSize = false;
+            this.btnUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnUpdate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnUpdate.Depth = 0;
+            this.btnUpdate.HighEmphasis = true;
+            this.btnUpdate.Icon = null;
+            this.btnUpdate.Location = new System.Drawing.Point(25, 210);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnUpdate.Size = new System.Drawing.Size(133, 38);
+            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.Text = "Modificar";
+            this.btnUpdate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnUpdate.UseAccentColor = false;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // pnlAdmin
+            // 
+            this.pnlAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.pnlAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlAdmin.Location = new System.Drawing.Point(188, 64);
+            this.pnlAdmin.MaximumSize = new System.Drawing.Size(634, 443);
+            this.pnlAdmin.MinimumSize = new System.Drawing.Size(634, 443);
+            this.pnlAdmin.Name = "pnlAdmin";
+            this.pnlAdmin.Size = new System.Drawing.Size(634, 443);
+            this.pnlAdmin.TabIndex = 5;
             // 
             // Admin
             // 

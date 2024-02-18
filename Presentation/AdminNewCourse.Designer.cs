@@ -278,7 +278,7 @@ namespace Presentation
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.ClientSize = new System.Drawing.Size(963, 613);
+            this.ClientSize = new System.Drawing.Size(634, 443);
             this.Controls.Add(this.lblWarning);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -288,8 +288,8 @@ namespace Presentation
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(963, 613);
-            this.MinimumSize = new System.Drawing.Size(963, 613);
+            this.MaximumSize = new System.Drawing.Size(634, 443);
+            this.MinimumSize = new System.Drawing.Size(634, 443);
             this.Name = "AdminNewCourse";
             this.Text = "NewCourse";
             this.panel1.ResumeLayout(false);

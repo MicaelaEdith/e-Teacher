@@ -22,3 +22,4 @@ C:\Users\micka\source\repos\e-Teacher\Presentation\obj\Debug\Presentation.AdminL
 C:\Users\micka\source\repos\e-Teacher\Presentation\obj\Debug\Presentation.AdminNewCourse.resources
 C:\Users\micka\source\repos\e-Teacher\Presentation\obj\Debug\Presentation.AdminUpdate.resources
 C:\Users\micka\source\repos\e-Teacher\Presentation\obj\Debug\Presentation.AdminAddStudent.resources
+C:\Users\micka\source\repos\e-Teacher\Presentation\obj\Debug\Presentation.AdminUpdateStudent.resources

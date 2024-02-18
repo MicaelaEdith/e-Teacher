@@ -88,5 +88,29 @@ namespace Business
             }
 
         }
+
+        public void Update(Student s) {
+
+            DataAccess data = new DataAccess();
+            try
+            {
+                data.Query("update alumnos set nombre='"+s.Name+"', apellido = '"+s.LastName+"' where id = " + s.Id);
+                data.Insert();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+
+                data.closeConnection();
+            }
+
+
+        }
     }
+
 }

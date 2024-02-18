@@ -29,32 +29,20 @@ namespace Presentation
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblName = new MaterialSkin.Controls.MaterialLabel();
             this.lblLastName = new MaterialSkin.Controls.MaterialLabel();
-            this.lblCourse = new MaterialSkin.Controls.MaterialLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblName = new MaterialSkin.Controls.MaterialLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.txtName = new MaterialSkin.Controls.MaterialTextBox();
             this.txtLastName = new MaterialSkin.Controls.MaterialTextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblCourse = new MaterialSkin.Controls.MaterialLabel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSave = new MaterialSkin.Controls.MaterialButton();
             this.btnCancel = new MaterialSkin.Controls.MaterialButton();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Depth = 0;
-            this.lblName.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblName.Location = new System.Drawing.Point(32, 33);
-            this.lblName.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(69, 19);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "Nombre : ";
             // 
             // lblLastName
             // 
@@ -68,17 +56,35 @@ namespace Presentation
             this.lblLastName.TabIndex = 1;
             this.lblLastName.Text = "Apellido : ";
             // 
-            // lblCourse
+            // panel2
             // 
-            this.lblCourse.AutoSize = true;
-            this.lblCourse.Depth = 0;
-            this.lblCourse.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblCourse.Location = new System.Drawing.Point(31, 16);
-            this.lblCourse.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblCourse.Name = "lblCourse";
-            this.lblCourse.Size = new System.Drawing.Size(62, 19);
-            this.lblCourse.TabIndex = 2;
-            this.lblCourse.Text = "Cursos : ";
+            this.panel2.Controls.Add(this.lblLastName);
+            this.panel2.Controls.Add(this.txtLastName);
+            this.panel2.Location = new System.Drawing.Point(14, 77);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(414, 64);
+            this.panel2.TabIndex = 6;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Depth = 0;
+            this.lblName.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblName.Location = new System.Drawing.Point(32, 33);
+            this.lblName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(69, 19);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "Nombre : ";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtName);
+            this.panel1.Controls.Add(this.lblName);
+            this.panel1.Location = new System.Drawing.Point(10, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(419, 77);
+            this.panel1.TabIndex = 5;
             // 
             // txtName
             // 
@@ -114,23 +120,17 @@ namespace Presentation
             this.txtLastName.Text = "";
             this.txtLastName.TrailingIcon = null;
             // 
-            // panel1
+            // lblCourse
             // 
-            this.panel1.Controls.Add(this.txtName);
-            this.panel1.Controls.Add(this.lblName);
-            this.panel1.Location = new System.Drawing.Point(10, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(419, 77);
-            this.panel1.TabIndex = 5;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.lblLastName);
-            this.panel2.Controls.Add(this.txtLastName);
-            this.panel2.Location = new System.Drawing.Point(14, 77);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(414, 64);
-            this.panel2.TabIndex = 6;
+            this.lblCourse.AutoSize = true;
+            this.lblCourse.Depth = 0;
+            this.lblCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblCourse.Location = new System.Drawing.Point(31, 16);
+            this.lblCourse.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblCourse.Name = "lblCourse";
+            this.lblCourse.Size = new System.Drawing.Size(62, 19);
+            this.lblCourse.TabIndex = 2;
+            this.lblCourse.Text = "Cursos : ";
             // 
             // panel3
             // 
@@ -142,6 +142,7 @@ namespace Presentation
             // 
             // btnSave
             // 
+            this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSave.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnSave.Depth = 0;
             this.btnSave.HighEmphasis = true;
@@ -151,7 +152,7 @@ namespace Presentation
             this.btnSave.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSave.Name = "btnSave";
             this.btnSave.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnSave.Size = new System.Drawing.Size(92, 36);
+            this.btnSave.Size = new System.Drawing.Size(88, 36);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Guardar";
             this.btnSave.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -161,6 +162,7 @@ namespace Presentation
             // 
             // btnCancel
             // 
+            this.btnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCancel.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnCancel.Depth = 0;
             this.btnCancel.HighEmphasis = true;
@@ -194,10 +196,10 @@ namespace Presentation
             this.MinimumSize = new System.Drawing.Size(578, 443);
             this.Name = "AdminAddStudent";
             this.Text = "AdminAddStudent";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -207,13 +209,13 @@ namespace Presentation
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialLabel lblName;
         private MaterialSkin.Controls.MaterialLabel lblLastName;
-        private MaterialSkin.Controls.MaterialLabel lblCourse;
-        private MaterialSkin.Controls.MaterialTextBox txtName;
-        private MaterialSkin.Controls.MaterialTextBox txtLastName;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private MaterialSkin.Controls.MaterialTextBox txtLastName;
+        private MaterialSkin.Controls.MaterialLabel lblName;
+        private System.Windows.Forms.Panel panel1;
+        private MaterialSkin.Controls.MaterialTextBox txtName;
+        private MaterialSkin.Controls.MaterialLabel lblCourse;
         private System.Windows.Forms.Panel panel3;
         private MaterialSkin.Controls.MaterialButton btnSave;
         private MaterialSkin.Controls.MaterialButton btnCancel;
