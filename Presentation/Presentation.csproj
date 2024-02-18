@@ -53,6 +53,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDelete.Designer.cs">
+      <DependentUpon>AdminDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminList.Designer.cs">
+      <DependentUpon>AdminList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminNewCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminNewCourse.Designer.cs">
+      <DependentUpon>AdminNewCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUpdate.Designer.cs">
+      <DependentUpon>AdminUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +91,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminDelete.resx">
+      <DependentUpon>AdminDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminList.resx">
+      <DependentUpon>AdminList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminNewCourse.resx">
+      <DependentUpon>AdminNewCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUpdate.resx">
+      <DependentUpon>AdminUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>

@@ -33,7 +33,9 @@ namespace Presentation
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCourses = new System.Windows.Forms.DataGridView();
             this.Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaHorario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +43,9 @@ namespace Presentation
             this.Nivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.dgvDiary = new System.Windows.Forms.DataGridView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.btnAdmin = new MaterialSkin.Controls.MaterialButton();
             this.Lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Miercoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,13 +103,13 @@ namespace Presentation
             this.dgvCourses.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvCourses.EnableHeadersVisualStyles = false;
             this.dgvCourses.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvCourses.Location = new System.Drawing.Point(33, 80);
+            this.dgvCourses.Location = new System.Drawing.Point(60, 80);
             this.dgvCourses.Name = "dgvCourses";
             this.dgvCourses.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvCourses.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvCourses.RowTemplate.Height = 35;
             this.dgvCourses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCourses.Size = new System.Drawing.Size(573, 281);
+            this.dgvCourses.Size = new System.Drawing.Size(673, 391);
             this.dgvCourses.TabIndex = 0;
             // 
             // Curso
@@ -135,12 +140,12 @@ namespace Presentation
             // 
             this.monthCalendar.AllowDrop = true;
             this.monthCalendar.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.monthCalendar.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
             this.monthCalendar.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.monthCalendar.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.monthCalendar.Location = new System.Drawing.Point(620, 80);
+            this.monthCalendar.Location = new System.Drawing.Point(784, 80);
             this.monthCalendar.Margin = new System.Windows.Forms.Padding(11, 9, 11, 11);
             this.monthCalendar.Name = "monthCalendar";
-            this.monthCalendar.ShowToday = false;
             this.monthCalendar.ShowTodayCircle = false;
             this.monthCalendar.TabIndex = 1;
             this.monthCalendar.TitleForeColor = System.Drawing.SystemColors.ActiveCaption;
@@ -170,37 +175,86 @@ namespace Presentation
             this.Viernes,
             this.Sabado,
             this.Domingo});
-            this.dgvDiary.Location = new System.Drawing.Point(620, 261);
+            this.dgvDiary.Location = new System.Drawing.Point(784, 247);
             this.dgvDiary.Name = "dgvDiary";
             this.dgvDiary.ReadOnly = true;
             this.dgvDiary.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDiary.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDiary.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvDiary.RowHeadersVisible = false;
-            this.dgvDiary.Size = new System.Drawing.Size(248, 128);
+            this.dgvDiary.Size = new System.Drawing.Size(248, 89);
             this.dgvDiary.TabIndex = 2;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(3, 64);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1094, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // materialCard1
+            // 
+            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Depth = 0;
+            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard1.Location = new System.Drawing.Point(784, 353);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard1.Name = "materialCard1";
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard1.Size = new System.Drawing.Size(251, 118);
+            this.materialCard1.TabIndex = 4;
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAdmin.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAdmin.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnAdmin.Depth = 0;
+            this.btnAdmin.ForeColor = System.Drawing.Color.Black;
+            this.btnAdmin.HighEmphasis = true;
+            this.btnAdmin.Icon = null;
+            this.btnAdmin.Location = new System.Drawing.Point(60, 475);
+            this.btnAdmin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAdmin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnAdmin.Size = new System.Drawing.Size(118, 36);
+            this.btnAdmin.TabIndex = 5;
+            this.btnAdmin.Text = "Administrar";
+            this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAdmin.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnAdmin.UseAccentColor = false;
+            this.btnAdmin.UseVisualStyleBackColor = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // Lunes
             // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Lunes.DefaultCellStyle = dataGridViewCellStyle5;
             this.Lunes.HeaderText = "L";
             this.Lunes.Name = "Lunes";
             this.Lunes.ReadOnly = true;
             // 
             // Martes
             // 
-            this.Martes.HeaderText = "Ma";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Martes.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Martes.HeaderText = "M";
             this.Martes.Name = "Martes";
             this.Martes.ReadOnly = true;
             // 
             // Miercoles
             // 
-            this.Miercoles.HeaderText = "Mi";
+            this.Miercoles.HeaderText = "X";
             this.Miercoles.Name = "Miercoles";
             this.Miercoles.ReadOnly = true;
             // 
@@ -232,19 +286,27 @@ namespace Presentation
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(900, 500);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(1100, 550);
+            this.Controls.Add(this.btnAdmin);
+            this.Controls.Add(this.materialCard1);
             this.Controls.Add(this.dgvDiary);
             this.Controls.Add(this.monthCalendar);
             this.Controls.Add(this.dgvCourses);
-            this.MaximumSize = new System.Drawing.Size(1200, 800);
-            this.MinimumSize = new System.Drawing.Size(800, 400);
+            this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStrip1;
+            this.MaximumSize = new System.Drawing.Size(1100, 550);
+            this.MinimumSize = new System.Drawing.Size(1100, 514);
             this.Name = "Home";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiary)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -257,6 +319,9 @@ namespace Presentation
         private System.Windows.Forms.DataGridViewTextBoxColumn Nivel;
         public System.Windows.Forms.MonthCalendar monthCalendar;
         private System.Windows.Forms.DataGridView dgvDiary;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private MaterialSkin.Controls.MaterialCard materialCard1;
+        private MaterialSkin.Controls.MaterialButton btnAdmin;
         private System.Windows.Forms.DataGridViewTextBoxColumn Lunes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Martes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Miercoles;

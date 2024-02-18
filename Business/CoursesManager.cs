@@ -47,5 +47,28 @@ namespace Business
 
 
         }
+
+        public void AddCourse(Courses c)
+        {
+            DataAccess data = new DataAccess();
+            try
+            {
+                data.Query("insert into cursos values ('" + c.CoursesClasses + "','" + c.Days + "','" + c.Institution + "','" + c.Level + "');");
+                data.Insert();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally {
+
+                data.closeConnection();
+            }
+        
+        
+        
+        }
     }
 }

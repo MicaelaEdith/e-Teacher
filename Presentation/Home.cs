@@ -24,7 +24,7 @@ namespace Presentation
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(
-            Primary.Grey800, Primary.Grey900,
+            Primary.Grey900, Primary.Grey900,
             Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
             //monthCalendar.
             UpdateDiary();
@@ -72,6 +72,11 @@ namespace Presentation
 
         }
 
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            Admin admin = new Admin();
+            admin.ShowDialog();
+        }
     }
 }
 
