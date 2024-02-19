@@ -23,3 +23,4 @@ C:\Users\micka\source\repos\e-Teacher\Presentation\obj\Debug\Presentation.AdminN
 C:\Users\micka\source\repos\e-Teacher\Presentation\obj\Debug\Presentation.AdminUpdate.resources
 C:\Users\micka\source\repos\e-Teacher\Presentation\obj\Debug\Presentation.AdminAddStudent.resources
 C:\Users\micka\source\repos\e-Teacher\Presentation\obj\Debug\Presentation.AdminUpdateStudent.resources
+C:\Users\micka\source\repos\e-Teacher\Presentation\obj\Debug\Presentation.DeleteWarning.resources

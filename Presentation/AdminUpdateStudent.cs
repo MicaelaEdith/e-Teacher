@@ -7,18 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Domain;
+using Business;
 
 namespace Presentation
 {
     public partial class AdminUpdateStudent : Form
     {
-        public AdminUpdateStudent()
+       private int id;
+        public AdminUpdateStudent(Student student)
         {
+            this.id = student.Id;
             InitializeComponent();
+            txtName.Text = student.Name;
+            txtLastName.Text = student.LastName;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            Student student = new Student();
+            student.Id = id;
+            student.Name = txtName.Text;
+            student.LastName = txtLastName.Text;
+
+            StudentsManager sm = new StudentsManager();
+            sm.Update(student);
+
+            Close();
 
         }
 

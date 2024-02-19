@@ -31,6 +31,8 @@ namespace Presentation
         {
             this.cbxItems = new MaterialSkin.Controls.MaterialComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblAvailable = new MaterialSkin.Controls.MaterialLabel();
+            this.swAvailable = new MaterialSkin.Controls.MaterialSwitch();
             this.btnList = new MaterialSkin.Controls.MaterialButton();
             this.btnDelete = new MaterialSkin.Controls.MaterialButton();
             this.btnAdd = new MaterialSkin.Controls.MaterialButton();
@@ -60,9 +62,12 @@ namespace Presentation
             this.cbxItems.Size = new System.Drawing.Size(133, 49);
             this.cbxItems.StartIndex = 0;
             this.cbxItems.TabIndex = 3;
+            this.cbxItems.SelectedIndexChanged += new System.EventHandler(this.cbxItems_SelectedIndexChanged);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblAvailable);
+            this.panel1.Controls.Add(this.swAvailable);
             this.panel1.Controls.Add(this.btnList);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnAdd);
@@ -73,6 +78,35 @@ namespace Presentation
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(185, 443);
             this.panel1.TabIndex = 4;
+            // 
+            // lblAvailable
+            // 
+            this.lblAvailable.Depth = 0;
+            this.lblAvailable.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblAvailable.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblAvailable.Location = new System.Drawing.Point(84, 313);
+            this.lblAvailable.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblAvailable.Name = "lblAvailable";
+            this.lblAvailable.Size = new System.Drawing.Size(74, 26);
+            this.lblAvailable.TabIndex = 9;
+            this.lblAvailable.Text = "INACTIVOS";
+            this.lblAvailable.Visible = false;
+            // 
+            // swAvailable
+            // 
+            this.swAvailable.AutoSize = true;
+            this.swAvailable.Depth = 0;
+            this.swAvailable.Location = new System.Drawing.Point(25, 304);
+            this.swAvailable.Margin = new System.Windows.Forms.Padding(0);
+            this.swAvailable.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.swAvailable.MouseState = MaterialSkin.MouseState.HOVER;
+            this.swAvailable.Name = "swAvailable";
+            this.swAvailable.Ripple = true;
+            this.swAvailable.Size = new System.Drawing.Size(58, 37);
+            this.swAvailable.TabIndex = 8;
+            this.swAvailable.UseVisualStyleBackColor = true;
+            this.swAvailable.Visible = false;
+            this.swAvailable.CheckedChanged += new System.EventHandler(this.swAvailable_CheckedChanged);
             // 
             // btnList
             // 
@@ -109,13 +143,13 @@ namespace Presentation
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnDelete.Size = new System.Drawing.Size(133, 38);
-            this.btnDelete.TabIndex = 6;
+            this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "   Eliminar   ";
             this.btnDelete.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnDelete.UseAccentColor = false;
-            this.btnDelete.UseMnemonic = false;
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Visible = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -152,7 +186,7 @@ namespace Presentation
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnUpdate.Size = new System.Drawing.Size(133, 38);
-            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Modificar";
             this.btnUpdate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnUpdate.UseAccentColor = false;
@@ -185,6 +219,7 @@ namespace Presentation
             this.Text = "Administrar";
             this.TransparencyKey = System.Drawing.SystemColors.Control;
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -197,5 +232,7 @@ namespace Presentation
         private MaterialSkin.Controls.MaterialButton btnAdd;
         private MaterialSkin.Controls.MaterialButton btnUpdate;
         private MaterialSkin.Controls.MaterialButton btnList;
+        private MaterialSkin.Controls.MaterialLabel lblAvailable;
+        private MaterialSkin.Controls.MaterialSwitch swAvailable;
     }
 }

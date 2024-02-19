@@ -15,9 +15,10 @@ using Business;
 namespace Presentation
 {
     public partial class Admin : MaterialForm
-    {        
+    {
         public Admin()
         {
+            AppData.id = -1;
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -29,8 +30,10 @@ namespace Presentation
         }
 
         private Form activeForm = null;
-        private void OpenPanel(Form form) {
-            if (activeForm != null) {
+        private void OpenPanel(Form form)
+        {
+            if (activeForm != null)
+            {
                 activeForm.Close();
             }
             activeForm = form;
@@ -41,55 +44,93 @@ namespace Presentation
             pnlAdmin.Tag = form;
             form.Tag = this;
             form.Show();
-        
+
         }
 
-        private void AddItems() {
+        private void AddItems()
+        {
 
             cbxItems.Items.Add("Cursos");
             cbxItems.Items.Add("Alumnos");
-            cbxItems.SelectedIndex=0;
+            cbxItems.SelectedIndex = 0;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             btnDelete.Visible = false;
             btnUpdate.Visible = false;
-            if (cbxItems.SelectedIndex==0)
+            swAvailable.Visible = false;
+            lblAvailable.Visible = false;
+            if (cbxItems.SelectedIndex == 0)
+            {
                 OpenPanel(new AdminNewCourse());
+            }
             else
+            {
                 OpenPanel(new AdminAddStudent());
+            }
         }
 
         private void btnList_Click(object sender, EventArgs e)
         {
-            OpenPanel(new AdminList(cbxItems.SelectedIndex));
-            btnDelete.Visible = true;
-            btnUpdate.Visible = true;
+            panelList(swAvailable.Checked);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if(cbxItems.SelectedIndex == 0)
+            Console.WriteLine("btnUpdate_click");
+            if (AppData.SelectedItem is Courses)
             {
                 OpenPanel(new AdminUpdate());
 
             }
             else
             {
-                OpenPanel(new AdminUpdateStudent());
+                OpenPanel(new AdminUpdateStudent((Student)AppData.SelectedItem));
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-           
-                StudentsManager sm = new StudentsManager();
-                sm.Delete(AppData.id);
-                OpenPanel(new AdminUpdateStudent());
+            if(AppData.id!=-1)
+            OpenPanel(new DeleteWarning(cbxItems.SelectedIndex));
+            
+
+        }
+        private void cbxItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AppData.id = -1;
 
         }
 
+        private void swAvailable_CheckedChanged(object sender, EventArgs e)
+        {
+            if (swAvailable.Checked)
+            {
+                if (AppData.SelectedItem is Courses)
+                {
+                    panelList(true);
+                }
+                else
+                {
+                    panelList(true);
+                }
+            }
+            else {
 
+                panelList(false);
+            }
+
+        }
+
+        private void panelList(bool Available) {
+
+            OpenPanel(new AdminList(cbxItems.SelectedIndex,Available));
+            btnDelete.Visible = true;
+            btnUpdate.Visible = true;
+            swAvailable.Visible = true;
+            lblAvailable.Visible = true;
+
+        }
     }
 }

@@ -95,6 +95,12 @@
     <Compile Include="AdminUpdateStudent.Designer.cs">
       <DependentUpon>AdminUpdateStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeleteWarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteWarning.Designer.cs">
+      <DependentUpon>DeleteWarning.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminUpdateStudent.resx">
       <DependentUpon>AdminUpdateStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteWarning.resx">
+      <DependentUpon>DeleteWarning.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

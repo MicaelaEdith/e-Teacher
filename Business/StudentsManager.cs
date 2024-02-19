@@ -27,7 +27,7 @@ namespace Business
                     aux.Id = (int)data.Reader["id"];
                     aux.Name = (string)data.Reader["nombre"];
                     aux.LastName = (string)data.Reader["apellido"];
-             
+
                     listStudents.Add(aux);
                 }
                 return listStudents;
@@ -42,6 +42,36 @@ namespace Business
             {
                 data.closeConnection();
             }
+        }
+
+        public string findNameByid(int id)
+        {
+            string name = "";
+
+            DataAccess data = new DataAccess();
+            try
+            {
+                data.Query("Select nombre, apellido from alumnos where id=" + id);
+                data.Read();
+
+                while (data.Reader.Read())
+                {
+                    name = (string)data.Reader["nombre"] + " " + (string)data.Reader["apellido"];
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+
+                data.closeConnection();
+            }
+
+            return name;
         }
 
         public void AddStudent(Student s)
@@ -72,7 +102,7 @@ namespace Business
             DataAccess data = new DataAccess();
             try
             {
-                data.Query("update alumnos set activo = 0 where id = "+id);
+                data.Query("update alumnos set activo = 0 where id = " + id);
                 data.Insert();
 
             }
@@ -89,12 +119,45 @@ namespace Business
 
         }
 
-        public void Update(Student s) {
+        public Student findByid(int idValue)
+        {
+            Student s = new Student();
+            DataAccess data = new DataAccess();
+            try
+            {
+                data.Query("Select nombre, apellido, activo from alumnos where id=" + idValue);
+                data.Read();
+
+                while (data.Reader.Read())
+                {
+                    s.Id = idValue;
+                    s.Name = (string)data.Reader["nombre"];
+                    s.LastName = (string)data.Reader["apellido"];
+                    s.available = (bool)data.Reader["activo"];
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+
+                data.closeConnection();
+            }
+
+            return s;
+        }
+
+        public void Update(Student s)
+        {
 
             DataAccess data = new DataAccess();
             try
             {
-                data.Query("update alumnos set nombre='"+s.Name+"', apellido = '"+s.LastName+"' where id = " + s.Id);
+                data.Query("update alumnos set nombre='" + s.Name + "', apellido = '" + s.LastName + "' where id = " + s.Id);
                 data.Insert();
 
             }

@@ -16,25 +16,39 @@ namespace Presentation
     {
         private List<Courses> listCourses;
         private List<Student> listStudents;
-        public AdminList(int index)
+        private int index;
+        private Student selectedStudent;
+        private Courses selectedCourses;
+        private CoursesManager courses = new CoursesManager();
+        private StudentsManager students = new StudentsManager();
+        private bool swAvailable;
+        public AdminList(int index, bool Available)
         {
+            this.swAvailable = Available;
+            this.index = index;
             InitializeComponent();
             if (index == 0)
                 UpdateCourses();
             else
                 UpdateStudents();
 
+            dgvList.ClearSelection();
+            dgvList.CurrentCell = null;
+
+
         }
 
         private void UpdateCourses()
-        {
-                CoursesManager courses = new CoursesManager();
-                listCourses = courses.ListCourses();
+        {                
+            listCourses = courses.ListCourses();
 
             try
             {
                 dgvList.DataSource = listCourses;
                 dgvList.Columns["id"].Visible = false;
+                if(!swAvailable)
+                    dgvList.Columns["available"].Visible = false;
+
                 dgvList.ClearSelection();
 
             }
@@ -49,13 +63,15 @@ namespace Presentation
 
         private void UpdateStudents()
         {
-            StudentsManager students = new StudentsManager();
             listStudents = students.ListStudents();
 
             try
             {
                 dgvList.DataSource = listStudents;
                 dgvList.Columns["id"].Visible = false;
+                if (!swAvailable)
+                    dgvList.Columns["available"].Visible = false;
+
                 dgvList.ClearSelection();
 
             }
@@ -66,28 +82,28 @@ namespace Presentation
             }
         }
 
-
-        /// check this 
-        ///          ↓
-        
-
-
-        public event EventHandler<int> StudentSelected;
-        private void dgvList_SelectionChanged(object sender, EventArgs e)
+        private void dgvList_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
+
             if (dgvList.SelectedRows.Count != 0)
             {
                 DataGridViewRow selectedRow = dgvList.SelectedRows[0];
 
-                object idValue = selectedRow.Cells["id"].Value;
-
-                if (idValue != null)
+                int idValue = (int)selectedRow.Cells["id"].Value;
+                AppData.id = idValue;
+                Console.WriteLine(AppData.id);
+                if (index == 0)
                 {
-                    int studentId = Convert.ToInt32(idValue);
-                    AppData.id = studentId;
-
-                    StudentSelected?.Invoke(this, studentId);
+                    selectedCourses = courses.findByid(idValue);
+                    AppData.SelectedItem = selectedCourses;
+                
                 }
+                else
+                {
+                    selectedStudent = students.findByid(idValue);
+                    AppData.SelectedItem = selectedStudent;
+                }
+
             }
 
         }

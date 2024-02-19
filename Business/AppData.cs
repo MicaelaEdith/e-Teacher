@@ -12,6 +12,8 @@ namespace Business
         public static object SelectedItem { get; set; }
         public static int id { get; set; }
         public static bool student { get; set; }
+        public static string openPanel { get; set; }
+        
     }
 
     
