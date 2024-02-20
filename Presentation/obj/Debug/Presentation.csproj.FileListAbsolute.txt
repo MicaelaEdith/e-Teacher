@@ -24,3 +24,6 @@ C:\Users\micka\source\repos\e-Teacher\Presentation\obj\Debug\Presentation.AdminU
 C:\Users\micka\source\repos\e-Teacher\Presentation\obj\Debug\Presentation.AdminAddStudent.resources
 C:\Users\micka\source\repos\e-Teacher\Presentation\obj\Debug\Presentation.AdminUpdateStudent.resources
 C:\Users\micka\source\repos\e-Teacher\Presentation\obj\Debug\Presentation.DeleteWarning.resources
+C:\Users\micka\source\repos\e-Teacher\Presentation\bin\Debug\Bunifu.Licensing.dll
+C:\Users\micka\source\repos\e-Teacher\Presentation\bin\Debug\Bunifu.UI.WinForms.dll
+C:\Users\micka\source\repos\e-Teacher\Presentation\bin\Debug\Bunifu.UI.WinForms.xml

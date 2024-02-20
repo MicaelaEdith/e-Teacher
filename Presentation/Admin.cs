@@ -114,11 +114,15 @@ namespace Presentation
                     AppData.openPanel = "AdminAddStudent";
 
                 }
-                else if(AppData.openPanel == "ListCourses")
+                else if (AppData.openPanel == "ListCourses")
                 {
                     panelList(swAvailable.Checked);
                     AppData.openPanel = "ListStudents";
 
+                }
+                else if (AppData.openPanel == "AdminUpdate" || AppData.openPanel == "AdminUpdateStudent") {
+
+                    panelList(swAvailable.Checked);
                 }
 
 
