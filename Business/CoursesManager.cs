@@ -49,6 +49,46 @@ namespace Business
 
         }
 
+        public List<Courses> ListCoursesAvailable()
+        {
+
+            List<Courses> listCourses = new List<Courses>();
+            DataAccess data = new DataAccess();
+
+            try
+            {
+                data.Query("Select id, curso_materia, dia_horario, institucion, nivel, activo from cursos where activo=1;");
+                data.Read();
+
+                while (data.Reader.Read())
+                {
+                    Courses aux = new Courses();
+
+                    aux.CoursesClasses = (string)data.Reader["curso_materia"];
+                    aux.Days = (string)data.Reader["dia_horario"];
+                    aux.Institution = (string)data.Reader["institucion"];
+                    aux.Level = (string)data.Reader["nivel"];
+                    aux.Id = (int)data.Reader["id"];
+                    aux.available = (bool)data.Reader["activo"];
+
+                    listCourses.Add(aux);
+                }
+                return listCourses;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                data.closeConnection();
+            }
+
+
+        }
+
         public void AddCourse(Courses c)
         {
             DataAccess data = new DataAccess();

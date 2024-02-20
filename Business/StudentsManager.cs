@@ -44,6 +44,42 @@ namespace Business
             }
         }
 
+        public List<Student> ListStudentsAvailable()
+        {
+
+            List<Student> listStudents = new List<Student>();
+            DataAccess data = new DataAccess();
+
+            try
+            {
+                data.Query("Select id,nombre, apellido, activo from alumnos where activo=1;");
+                data.Read();
+
+                while (data.Reader.Read())
+                {
+                    Student aux = new Student();
+
+                    aux.Id = (int)data.Reader["id"];
+                    aux.Name = (string)data.Reader["nombre"];
+                    aux.LastName = (string)data.Reader["apellido"];
+                    aux.available = (bool)data.Reader["activo"];
+
+                    listStudents.Add(aux);
+                }
+                return listStudents;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                data.closeConnection();
+            }
+        }
+
         public string findNameByid(int id)
         {
             string name = "";

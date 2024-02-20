@@ -64,10 +64,12 @@ namespace Presentation
             if (cbxItems.SelectedIndex == 0)
             {
                 OpenPanel(new AdminNewCourse());
+                AppData.openPanel = "AdminNewCourse";
             }
             else
             {
                 OpenPanel(new AdminAddStudent());
+                AppData.openPanel = "AdminAddStudent";
             }
         }
 
@@ -78,15 +80,20 @@ namespace Presentation
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("btnUpdate_click");
-            if (AppData.SelectedItem is Courses)
+            if (AppData.id > 0)
             {
-                OpenPanel(new AdminUpdate());
+                if (AppData.SelectedItem is Courses)
+                {
+                    OpenPanel(new AdminUpdate());
+                    AppData.openPanel = "AdminUpdate";
 
-            }
-            else
-            {
-                OpenPanel(new AdminUpdateStudent((Student)AppData.SelectedItem));
+                }
+                else
+                {
+
+                    OpenPanel(new AdminUpdateStudent((Student)AppData.SelectedItem));
+                    AppData.openPanel = "AdminUpdateStudent";
+                }
             }
         }
 
@@ -99,7 +106,38 @@ namespace Presentation
         }
         private void cbxItems_SelectedIndexChanged(object sender, EventArgs e)
         {
-            AppData.id = -1;
+            if (cbxItems.SelectedIndex == 1)
+            {
+                if (AppData.openPanel == "AdminNewCourse")
+                {
+                    OpenPanel(new AdminAddStudent());
+                    AppData.openPanel = "AdminAddStudent";
+
+                }
+                else if(AppData.openPanel == "ListCourses")
+                {
+                    panelList(swAvailable.Checked);
+                    AppData.openPanel = "ListStudents";
+
+                }
+
+
+            }
+            else {
+                if (AppData.openPanel == "AdminAddStudent")
+                {
+                    OpenPanel(new AdminNewCourse());
+                    AppData.openPanel = "AdminNewCourse";
+                }
+                else if (AppData.openPanel == "ListStudents")
+                {
+                    panelList(swAvailable.Checked);
+                    AppData.openPanel = "ListCourses";
+
+                }
+
+
+            }
 
         }
 

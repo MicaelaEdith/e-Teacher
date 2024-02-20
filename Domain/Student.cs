@@ -11,7 +11,7 @@ namespace Domain
     {
         public int Id { get; set; }
 
-        [DisplayName("Apellico")]
+        [DisplayName("Apellido")]
         public String LastName { get; set; }
 
         [DisplayName("Nombre")]

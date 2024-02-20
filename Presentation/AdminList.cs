@@ -22,6 +22,8 @@ namespace Presentation
         private CoursesManager courses = new CoursesManager();
         private StudentsManager students = new StudentsManager();
         private bool swAvailable;
+        private List<Courses> listAvailableC;
+        private List<Student> listAvailableS;
         public AdminList(int index, bool Available)
         {
             this.swAvailable = Available;
@@ -41,10 +43,16 @@ namespace Presentation
         private void UpdateCourses()
         {                
             listCourses = courses.ListCourses();
+            listAvailableC = courses.ListCoursesAvailable();
+            AppData.openPanel = "ListCourses";
+            
 
             try
             {
-                dgvList.DataSource = listCourses;
+                if (!swAvailable)
+                    dgvList.DataSource = listAvailableC;
+                else
+                    dgvList.DataSource = listCourses;
                 dgvList.Columns["id"].Visible = false;
                 if(!swAvailable)
                     dgvList.Columns["available"].Visible = false;
@@ -64,10 +72,15 @@ namespace Presentation
         private void UpdateStudents()
         {
             listStudents = students.ListStudents();
+            listAvailableS = students.ListStudentsAvailable();
+            AppData.openPanel = "ListStudents";
 
             try
             {
-                dgvList.DataSource = listStudents;
+                if (!swAvailable)
+                    dgvList.DataSource = listAvailableS;
+                else
+                    dgvList.DataSource = listStudents;
                 dgvList.Columns["id"].Visible = false;
                 if (!swAvailable)
                     dgvList.Columns["available"].Visible = false;
