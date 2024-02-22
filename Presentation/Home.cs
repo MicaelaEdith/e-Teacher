@@ -41,7 +41,7 @@ namespace Presentation
 
             try
             {
-                listCourses = courses.ListCourses();
+                listCourses = courses.ListCoursesAvailable();
                 foreach (Courses c in listCourses)
                 {
 

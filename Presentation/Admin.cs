@@ -84,13 +84,12 @@ namespace Presentation
             {
                 if (AppData.SelectedItem is Courses)
                 {
-                    OpenPanel(new AdminUpdate());
+                    OpenPanel(new AdminUpdate((Courses)AppData.SelectedItem));
                     AppData.openPanel = "AdminUpdate";
 
                 }
                 else
                 {
-
                     OpenPanel(new AdminUpdateStudent((Student)AppData.SelectedItem));
                     AppData.openPanel = "AdminUpdateStudent";
                 }

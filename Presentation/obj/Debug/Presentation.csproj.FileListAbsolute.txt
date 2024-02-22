@@ -17,7 +17,6 @@ C:\Users\micka\source\repos\e-Teacher\Presentation\bin\Debug\Presentation.exe.co
 C:\Users\micka\source\repos\e-Teacher\Presentation\bin\Debug\Presentation.exe
 C:\Users\micka\source\repos\e-Teacher\Presentation\obj\Debug\Presentation.exe
 C:\Users\micka\source\repos\e-Teacher\Presentation\obj\Debug\Presentation.Admin.resources
-C:\Users\micka\source\repos\e-Teacher\Presentation\obj\Debug\Presentation.AdminDelete.resources
 C:\Users\micka\source\repos\e-Teacher\Presentation\obj\Debug\Presentation.AdminList.resources
 C:\Users\micka\source\repos\e-Teacher\Presentation\obj\Debug\Presentation.AdminNewCourse.resources
 C:\Users\micka\source\repos\e-Teacher\Presentation\obj\Debug\Presentation.AdminUpdate.resources

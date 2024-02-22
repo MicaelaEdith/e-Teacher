@@ -24,6 +24,8 @@ namespace Presentation
         private bool swAvailable;
         private List<Courses> listAvailableC;
         private List<Student> listAvailableS;
+        private bool details = false;
+        string name;
         public AdminList(int index, bool Available)
         {
             this.swAvailable = Available;
@@ -94,6 +96,24 @@ namespace Presentation
                 throw ex;
             }
         }
+        private void Datails()
+        {
+            dgvData.DataSource = courses.listStudents(AppData.id);
+            dgvData.Columns["id"].Visible = false;
+            lblTitle.Text = courses.findByid(AppData.id).CoursesClasses.ToUpper();
+
+
+            List<Student> list = students.ListStudentsAvailable();
+
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                name += list[i].Name + " " + list[i].LastName;
+                cbxAdd.Items.Add(name);
+                name = "";
+            }
+
+        }
 
         private void dgvList_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -118,6 +138,41 @@ namespace Presentation
                 }
 
             }
+
+        }
+
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            if (!details) { 
+                details = true;
+                dgvList.Visible = false;
+                cbxAdd.Visible = true;
+                btnAddData.Visible = true;
+                dgvData.Visible = true;
+                lblTitle.Visible = true;
+                btnDetails.Text = "Volver";
+                Datails();
+                
+
+            }
+            else
+            {
+                details = false;
+                dgvList.Visible = true;
+                dgvData.Visible = false;
+                cbxAdd.Visible = false;
+                lblTitle.Visible = false;
+                btnAddData.Visible = false;
+                btnDetails.Text = "Detalle";
+
+            }
+           
+        }
+
+        private void btnAddData_Click(object sender, EventArgs e)
+        {
+            ///////   check the idStudent  ↓
+            students.AddCourse(AppData.id, cbxAdd.SelectedIndex+1);
 
         }
     }

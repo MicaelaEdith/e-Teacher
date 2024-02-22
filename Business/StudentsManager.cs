@@ -210,6 +210,29 @@ namespace Business
 
 
         }
+
+        public void AddCourse(int idCourse, int idStudent) {
+
+            DataAccess data = new DataAccess();
+            try
+            {
+                
+                data.Query("INSERT INTO cursos_alumnos (curso, alumno) VALUES ("+idCourse+", "+idStudent+")");
+                data.Insert();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+
+                data.closeConnection();
+            }
+
+        }
     }
 
 }

@@ -39,6 +39,7 @@ namespace Presentation
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtName = new MaterialSkin.Controls.MaterialTextBox();
             this.lblName = new MaterialSkin.Controls.MaterialLabel();
+            this.lblWarning = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -180,12 +181,27 @@ namespace Presentation
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Nombre : ";
             // 
+            // lblWarning
+            // 
+            this.lblWarning.AutoSize = true;
+            this.lblWarning.BackColor = System.Drawing.Color.IndianRed;
+            this.lblWarning.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWarning.ForeColor = System.Drawing.Color.White;
+            this.lblWarning.Location = new System.Drawing.Point(109, 7);
+            this.lblWarning.Name = "lblWarning";
+            this.lblWarning.Size = new System.Drawing.Size(347, 24);
+            this.lblWarning.TabIndex = 24;
+            this.lblWarning.Text = " Todos los campos son obligatorios ";
+            this.lblWarning.Visible = false;
+            // 
             // AdminUpdateStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.ClientSize = new System.Drawing.Size(634, 443);
+            this.Controls.Add(this.lblWarning);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel3);
@@ -219,5 +235,6 @@ namespace Presentation
         private System.Windows.Forms.Panel panel1;
         private MaterialSkin.Controls.MaterialTextBox txtName;
         private MaterialSkin.Controls.MaterialLabel lblName;
+        private System.Windows.Forms.Label lblWarning;
     }
 }

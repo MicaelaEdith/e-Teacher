@@ -31,15 +31,20 @@ namespace Presentation
             student.LastName = txtLastName.Text;
 
             StudentsManager sm = new StudentsManager();
-            sm.Update(student);
 
-            Close();
+            if (txtLastName.Text != "" && txtLastName != null && txtName.Text != "" && txtName != null)
+            {
+                sm.Update(student);
+                Close();
+            }
+            else
+                lblWarning.Visible = true;
 
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
     }
 }

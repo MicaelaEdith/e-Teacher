@@ -33,6 +33,7 @@ namespace Business
 
                     listCourses.Add(aux);
                 }
+                Console.WriteLine("todos: " + listCourses);
                 return listCourses;
 
             }
@@ -73,6 +74,7 @@ namespace Business
 
                     listCourses.Add(aux);
                 }
+                Console.WriteLine("Disponibles: "+listCourses);
                 return listCourses;
 
             }
@@ -94,7 +96,7 @@ namespace Business
             DataAccess data = new DataAccess();
             try
             {
-                data.Query("insert into cursos values ('" + c.CoursesClasses + "','" + c.Days + "','" + c.Institution + "','" + c.Level + "');");
+                data.Query("insert into cursos values ('" + c.CoursesClasses + "','" + c.Days + "','" + c.Institution + "','" + c.Level + "', 1);");
                 data.Read();
 
             }
@@ -194,7 +196,63 @@ namespace Business
             return c;
         }
 
-   
+        public void Update(Courses c)
+        {
 
+            DataAccess data = new DataAccess();
+            try
+            {
+                data.Query("update cursos set curso_materia='"+c.CoursesClasses+"', dia_horario='"+c.Days+"', institucion='"+c.Institution+"', nivel='"+c.Level+"' where id='"+ c.Id+"'");
+                data.Insert();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+
+                data.closeConnection();
+            }
+
+
+        }
+        public List<Student> listStudents(int idCourse) {
+
+            List<Student> listS = new List<Student>();
+            DataAccess data = new DataAccess();
+
+            try
+            {
+                data.Query("SELECT c.curso_materia, a.id, a.nombre, a.apellido FROM cursos_alumnos ca JOIN cursos c ON ca.curso = c.id JOIN alumnos a ON ca.alumno = a.id where c.id= "+idCourse+";");
+                data.Read();
+
+                while (data.Reader.Read())
+                {
+                    Student aux = new Student();
+
+                    aux.Name = (string)data.Reader["nombre"];
+                    aux.LastName = (string)data.Reader["Apellido"];
+                    aux.Id = (int)data.Reader["id"];
+
+                    listS.Add(aux);
+                }
+
+                return listS;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                data.closeConnection();
+            }
+
+        }
     }
 }

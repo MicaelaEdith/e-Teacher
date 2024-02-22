@@ -21,26 +21,19 @@ namespace Presentation
         }
 
         private void btnSave_Click(object sender, EventArgs e)
-        {
+        {/*
             Student aux = new Student();
             aux.Name = txtName.Text;
             aux.LastName = txtLastName.Text;
 
             StudentsManager sm = new StudentsManager();
             sm.AddStudent(aux);
-            if (this.Tag is Admin parentForm)
-            {
-                parentForm.Close();
-            }
-
+            Close();*/
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (this.Tag is Admin parentForm)
-            {
-                parentForm.Close();
-            }
+            Close();
 
         }
     }
