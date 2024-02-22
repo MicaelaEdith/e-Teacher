@@ -91,7 +91,7 @@ namespace Presentation
             this.dgvCourses.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvCourses.EnableHeadersVisualStyles = false;
             this.dgvCourses.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvCourses.Location = new System.Drawing.Point(60, 80);
+            this.dgvCourses.Location = new System.Drawing.Point(60, 78);
             this.dgvCourses.MultiSelect = false;
             this.dgvCourses.Name = "dgvCourses";
             this.dgvCourses.ReadOnly = true;
@@ -176,7 +176,7 @@ namespace Presentation
             this.btnAdmin.ForeColor = System.Drawing.Color.Black;
             this.btnAdmin.HighEmphasis = true;
             this.btnAdmin.Icon = null;
-            this.btnAdmin.Location = new System.Drawing.Point(60, 475);
+            this.btnAdmin.Location = new System.Drawing.Point(60, 474);
             this.btnAdmin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAdmin.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdmin.Name = "btnAdmin";

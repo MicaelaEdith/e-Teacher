@@ -115,7 +115,7 @@ namespace Business
             DataAccess data = new DataAccess();
             try
             {
-                data.Query("insert into alumnos (nombre, apellido, activo) values ('" + s.Name + "','" + s.LastName + "',1);");
+                data.Query("insert into alumnos values ('" + s.Name + "','" + s.LastName + "',1)");
                 data.Insert();
 
             }

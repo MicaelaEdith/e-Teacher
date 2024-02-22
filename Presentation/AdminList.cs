@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business;
 using Domain;
+using System.Runtime.InteropServices;
 
 namespace Presentation
 {
@@ -26,11 +27,25 @@ namespace Presentation
         private List<Student> listAvailableS;
         private bool details = false;
         string name;
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // height of ellipse
+            int nHeightEllipse // width of ellipse
+        );
+
         public AdminList(int index, bool Available)
         {
             this.swAvailable = Available;
             this.index = index;
             InitializeComponent();
+            dgvList.BorderStyle = BorderStyle.None;
+            dgvList.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, dgvList.MaximumSize.Width, dgvList.MaximumSize.Height, 5, 5));
             if (index == 0)
                 UpdateCourses();
             else

@@ -11,13 +11,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
 using Business;
+using System.Runtime.InteropServices;
 
 namespace Presentation
 {
     public partial class Home : MaterialForm
     {
         private List<Courses> listCourses;
-       
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // height of ellipse
+            int nHeightEllipse // width of ellipse
+        );
         public Home()
         {
             InitializeComponent();
@@ -27,6 +38,11 @@ namespace Presentation
             materialSkinManager.ColorScheme = new ColorScheme(
             Primary.Grey900, Primary.Grey900,
             Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 5, 5));
+            dgvCourses.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, dgvCourses.Width, dgvCourses.Height, 5, 5));
+            
+
             UpdateDiary();
             UpdateGrid();
             
