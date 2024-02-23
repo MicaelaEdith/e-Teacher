@@ -45,7 +45,10 @@ namespace Presentation
             this.index = index;
             InitializeComponent();
             dgvList.BorderStyle = BorderStyle.None;
+            dgvData.BorderStyle = BorderStyle.None;
             dgvList.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, dgvList.MaximumSize.Width, dgvList.MaximumSize.Height, 5, 5));
+            dgvData.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, dgvData.Width, dgvData.Height, 5, 5));
+            cbxAdd.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, cbxAdd.Width, cbxAdd.Height, 5, 5));
             if (index == 0)
                 UpdateCourses();
             else
@@ -53,6 +56,7 @@ namespace Presentation
 
             dgvList.ClearSelection();
             dgvList.CurrentCell = null;
+            
 
 
         }
@@ -99,6 +103,7 @@ namespace Presentation
                 else
                     dgvList.DataSource = listStudents;
                 dgvList.Columns["id"].Visible = false;
+                
                 if (!swAvailable)
                     dgvList.Columns["available"].Visible = false;
 
@@ -115,6 +120,7 @@ namespace Presentation
         {
             dgvData.DataSource = courses.listStudents(AppData.id);
             dgvData.Columns["id"].Visible = false;
+            dgvData.Columns[3].Visible = false;
             lblTitle.Text = courses.findByid(AppData.id).CoursesClasses.ToUpper();
 
 
