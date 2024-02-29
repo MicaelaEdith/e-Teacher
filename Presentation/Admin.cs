@@ -36,10 +36,10 @@ namespace Presentation
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(
-            Primary.Grey900, Primary.Grey900,
-            Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+             Primary.Grey900, Primary.Grey900,
+             Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
             this.FormBorderStyle = FormBorderStyle.None;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 5, 5));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
             cbxItems.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, cbxItems.Width, cbxItems.Height, 5, 5));
             AddItems();
         }

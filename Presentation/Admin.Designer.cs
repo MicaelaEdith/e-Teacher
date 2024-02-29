@@ -47,21 +47,24 @@ namespace Presentation
             this.cbxItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cbxItems.Depth = 0;
             this.cbxItems.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbxItems.DropDownHeight = 174;
+            this.cbxItems.DropDownHeight = 118;
             this.cbxItems.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxItems.DropDownWidth = 121;
             this.cbxItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cbxItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cbxItems.FormattingEnabled = true;
             this.cbxItems.IntegralHeight = false;
-            this.cbxItems.ItemHeight = 43;
-            this.cbxItems.Location = new System.Drawing.Point(25, 15);
+            this.cbxItems.ItemHeight = 29;
+            this.cbxItems.Location = new System.Drawing.Point(25, 38);
             this.cbxItems.MaxDropDownItems = 4;
+            this.cbxItems.MaximumSize = new System.Drawing.Size(133, 0);
+            this.cbxItems.MinimumSize = new System.Drawing.Size(133, 0);
             this.cbxItems.MouseState = MaterialSkin.MouseState.OUT;
             this.cbxItems.Name = "cbxItems";
-            this.cbxItems.Size = new System.Drawing.Size(133, 49);
+            this.cbxItems.Size = new System.Drawing.Size(133, 35);
             this.cbxItems.StartIndex = 0;
             this.cbxItems.TabIndex = 3;
+            this.cbxItems.UseTallSize = false;
             this.cbxItems.SelectedIndexChanged += new System.EventHandler(this.cbxItems_SelectedIndexChanged);
             // 
             // panel1

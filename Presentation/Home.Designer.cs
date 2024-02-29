@@ -29,9 +29,9 @@ namespace Presentation
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCourses = new System.Windows.Forms.DataGridView();
             this.Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaHorario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,28 +50,28 @@ namespace Presentation
             this.dgvCourses.AllowUserToDeleteRows = false;
             this.dgvCourses.AllowUserToResizeColumns = false;
             this.dgvCourses.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(6);
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Gray;
-            this.dgvCourses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(6);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Gray;
+            this.dgvCourses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvCourses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCourses.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dgvCourses.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvCourses.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCourses.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvCourses.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(4, 8, 8, 8);
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCourses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(4, 8, 8, 8);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCourses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvCourses.ColumnHeadersHeight = 42;
             this.dgvCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCourses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -79,15 +79,15 @@ namespace Presentation
             this.DiaHorario,
             this.Institucion,
             this.Nivel});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(6);
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCourses.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(6);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCourses.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvCourses.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvCourses.EnableHeadersVisualStyles = false;
             this.dgvCourses.GridColor = System.Drawing.SystemColors.Control;
@@ -138,7 +138,7 @@ namespace Presentation
             this.monthCalendar.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.monthCalendar.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.monthCalendar.Location = new System.Drawing.Point(784, 80);
-            this.monthCalendar.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.monthCalendar.Margin = new System.Windows.Forms.Padding(0);
             this.monthCalendar.MaximumSize = new System.Drawing.Size(248, 162);
             this.monthCalendar.MinimumSize = new System.Drawing.Size(248, 162);
             this.monthCalendar.Name = "monthCalendar";
@@ -210,7 +210,7 @@ namespace Presentation
             this.Name = "Home";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
+            this.Text = " E -Teacher ";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).EndInit();
             this.ResumeLayout(false);

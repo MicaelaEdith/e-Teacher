@@ -22,12 +22,11 @@ namespace Presentation
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Student aux = new Student();
-            aux.Name = txtName.Text;
-            aux.LastName = txtLastName.Text;
+            string name = txtName.Text;
+            string lastName = txtLastName.Text;
 
             StudentsManager sm = new StudentsManager();
-            sm.AddStudent(aux);
+            sm.AddStudent(name, lastName);
             Close();
         }
 

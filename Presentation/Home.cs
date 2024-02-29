@@ -37,9 +37,9 @@ namespace Presentation
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(
             Primary.Grey900, Primary.Grey900,
-            Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
             this.FormBorderStyle = FormBorderStyle.None;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 5, 5));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
             dgvCourses.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, dgvCourses.Width, dgvCourses.Height, 5, 5));
             UpdateDiary();
             UpdateGrid();

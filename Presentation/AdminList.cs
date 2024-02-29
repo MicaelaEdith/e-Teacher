@@ -192,7 +192,7 @@ namespace Presentation
 
         private void btnAddData_Click(object sender, EventArgs e)
         {
-            ///////   check the idStudent  ↓
+            ///////   check the idStudent  ↓ 
             students.AddCourse(AppData.id, cbxAdd.SelectedIndex+1);
 
         }

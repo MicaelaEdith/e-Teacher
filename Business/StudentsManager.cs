@@ -110,12 +110,12 @@ namespace Business
             return name;
         }
 
-        public void AddStudent(Student s)
+        public void AddStudent(string name, string lastName)
         {
             DataAccess data = new DataAccess();
             try
             {
-                data.Query("insert into alumnos values ('" + s.Name + "','" + s.LastName + "',1)");
+                data.Query("insert into alumnos values ('" + name + "','" + lastName + "',1)");
                 data.Insert();
 
             }
@@ -211,7 +211,7 @@ namespace Business
 
         }
 
-        public void AddCourse(int idCourse, int idStudent) {
+        public void AddCourse(int idStudent, int idCourse) {
 
             DataAccess data = new DataAccess();
             try
