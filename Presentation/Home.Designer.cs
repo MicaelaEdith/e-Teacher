@@ -99,7 +99,7 @@ namespace Presentation
             this.dgvCourses.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvCourses.RowTemplate.Height = 35;
             this.dgvCourses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCourses.Size = new System.Drawing.Size(673, 391);
+            this.dgvCourses.Size = new System.Drawing.Size(673, 383);
             this.dgvCourses.TabIndex = 0;
             // 
             // Curso
@@ -178,7 +178,7 @@ namespace Presentation
             this.btnAdmin.ForeColor = System.Drawing.Color.Black;
             this.btnAdmin.HighEmphasis = true;
             this.btnAdmin.Icon = null;
-            this.btnAdmin.Location = new System.Drawing.Point(60, 474);
+            this.btnAdmin.Location = new System.Drawing.Point(60, 470);
             this.btnAdmin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAdmin.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdmin.Name = "btnAdmin";

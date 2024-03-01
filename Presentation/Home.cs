@@ -94,14 +94,14 @@ namespace Presentation
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             Admin admin = new Admin();
-            DialogResult result = admin.ShowDialog();
+           // DialogResult result = admin.ShowDialog();
 
             admin.ShowDialog();
 
-            if (result == DialogResult.OK)
+          /*  if (result == DialogResult.OK)
             {
                 UpdateGrid();
-            }
+            }*/
         }
 
 

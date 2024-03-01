@@ -31,10 +31,10 @@ namespace Presentation
         {
             this.lblLastName = new MaterialSkin.Controls.MaterialLabel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtLastName = new MaterialSkin.Controls.MaterialTextBox();
             this.lblName = new MaterialSkin.Controls.MaterialLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtName = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtLastName = new MaterialSkin.Controls.MaterialTextBox();
             this.lblCourse = new MaterialSkin.Controls.MaterialLabel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSave = new MaterialSkin.Controls.MaterialButton();
@@ -65,6 +65,24 @@ namespace Presentation
             this.panel2.Size = new System.Drawing.Size(414, 64);
             this.panel2.TabIndex = 6;
             // 
+            // txtLastName
+            // 
+            this.txtLastName.AnimateReadOnly = false;
+            this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastName.Depth = 0;
+            this.txtLastName.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtLastName.LeadingIcon = null;
+            this.txtLastName.Location = new System.Drawing.Point(97, 9);
+            this.txtLastName.MaxLength = 50;
+            this.txtLastName.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtLastName.Multiline = false;
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(264, 36);
+            this.txtLastName.TabIndex = 4;
+            this.txtLastName.Text = "";
+            this.txtLastName.TrailingIcon = null;
+            this.txtLastName.UseTallSize = false;
+            // 
             // lblName
             // 
             this.lblName.AutoSize = true;
@@ -93,38 +111,22 @@ namespace Presentation
             this.txtName.Depth = 0;
             this.txtName.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtName.LeadingIcon = null;
-            this.txtName.Location = new System.Drawing.Point(101, 17);
+            this.txtName.Location = new System.Drawing.Point(101, 25);
             this.txtName.MaxLength = 50;
             this.txtName.MouseState = MaterialSkin.MouseState.OUT;
             this.txtName.Multiline = false;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(264, 50);
+            this.txtName.Size = new System.Drawing.Size(264, 36);
             this.txtName.TabIndex = 3;
             this.txtName.Text = "";
             this.txtName.TrailingIcon = null;
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.AnimateReadOnly = false;
-            this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLastName.Depth = 0;
-            this.txtLastName.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtLastName.LeadingIcon = null;
-            this.txtLastName.Location = new System.Drawing.Point(97, 4);
-            this.txtLastName.MaxLength = 50;
-            this.txtLastName.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtLastName.Multiline = false;
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(264, 50);
-            this.txtLastName.TabIndex = 4;
-            this.txtLastName.Text = "";
-            this.txtLastName.TrailingIcon = null;
+            this.txtName.UseTallSize = false;
             // 
             // lblCourse
             // 
             this.lblCourse.AutoSize = true;
             this.lblCourse.Depth = 0;
-            this.lblCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblCourse.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblCourse.Location = new System.Drawing.Point(31, 16);
             this.lblCourse.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblCourse.Name = "lblCourse";

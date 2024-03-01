@@ -133,15 +133,16 @@ namespace Presentation
             this.txtLastName.Depth = 0;
             this.txtLastName.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtLastName.LeadingIcon = null;
-            this.txtLastName.Location = new System.Drawing.Point(97, 7);
+            this.txtLastName.Location = new System.Drawing.Point(97, 9);
             this.txtLastName.MaxLength = 50;
             this.txtLastName.MouseState = MaterialSkin.MouseState.OUT;
             this.txtLastName.Multiline = false;
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(264, 50);
+            this.txtLastName.Size = new System.Drawing.Size(264, 36);
             this.txtLastName.TabIndex = 4;
             this.txtLastName.Text = "";
             this.txtLastName.TrailingIcon = null;
+            this.txtLastName.UseTallSize = false;
             // 
             // panel1
             // 
@@ -159,15 +160,16 @@ namespace Presentation
             this.txtName.Depth = 0;
             this.txtName.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtName.LeadingIcon = null;
-            this.txtName.Location = new System.Drawing.Point(101, 17);
+            this.txtName.Location = new System.Drawing.Point(101, 24);
             this.txtName.MaxLength = 50;
             this.txtName.MouseState = MaterialSkin.MouseState.OUT;
             this.txtName.Multiline = false;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(264, 50);
+            this.txtName.Size = new System.Drawing.Size(264, 36);
             this.txtName.TabIndex = 3;
             this.txtName.Text = "";
             this.txtName.TrailingIcon = null;
+            this.txtName.UseTallSize = false;
             // 
             // lblName
             // 
