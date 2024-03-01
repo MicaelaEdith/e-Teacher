@@ -51,8 +51,11 @@ namespace Presentation
             cbxAdd.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, cbxAdd.Width, cbxAdd.Height, 5, 5));
             if (index == 0)
                 UpdateCourses();
-            else
+            else { 
                 UpdateStudents();
+                dgvList.Columns["lastName"].Width = 180;
+            }
+
 
             dgvList.ClearSelection();
             dgvList.CurrentCell = null;

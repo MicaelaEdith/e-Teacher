@@ -58,12 +58,14 @@ namespace Presentation
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Gray;
             this.dgvList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.BackgroundColor = System.Drawing.Color.White;
             this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvList.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
@@ -100,6 +102,7 @@ namespace Presentation
             this.dgvList.RowHeadersVisible = false;
             this.dgvList.RowTemplate.Height = 32;
             this.dgvList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvList.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvList.Size = new System.Drawing.Size(554, 315);
             this.dgvList.TabIndex = 2;
@@ -194,21 +197,22 @@ namespace Presentation
             this.cbxAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cbxAdd.Depth = 0;
             this.cbxAdd.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbxAdd.DropDownHeight = 174;
+            this.cbxAdd.DropDownHeight = 118;
             this.cbxAdd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxAdd.DropDownWidth = 121;
             this.cbxAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cbxAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cbxAdd.FormattingEnabled = true;
             this.cbxAdd.IntegralHeight = false;
-            this.cbxAdd.ItemHeight = 43;
+            this.cbxAdd.ItemHeight = 29;
             this.cbxAdd.Location = new System.Drawing.Point(25, 226);
             this.cbxAdd.MaxDropDownItems = 4;
             this.cbxAdd.MouseState = MaterialSkin.MouseState.OUT;
             this.cbxAdd.Name = "cbxAdd";
-            this.cbxAdd.Size = new System.Drawing.Size(409, 49);
+            this.cbxAdd.Size = new System.Drawing.Size(409, 35);
             this.cbxAdd.StartIndex = 0;
             this.cbxAdd.TabIndex = 6;
+            this.cbxAdd.UseTallSize = false;
             this.cbxAdd.Visible = false;
             // 
             // btnAddData

@@ -41,11 +41,15 @@ namespace Presentation
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
             dgvCourses.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, dgvCourses.Width, dgvCourses.Height, 5, 5));
-            UpdateDiary();
-            UpdateGrid();
             
         }
 
+        private void Home_Load(object sender, EventArgs e)
+        {
+            UpdateDiary();
+            UpdateGrid();
+
+        }
         private void UpdateGrid()
         {
             CoursesManager courses = new CoursesManager();
@@ -90,8 +94,19 @@ namespace Presentation
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             Admin admin = new Admin();
+            DialogResult result = admin.ShowDialog();
+
             admin.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                UpdateGrid();
+            }
         }
+
+
+
+
     }
 }
 
