@@ -47,6 +47,13 @@ namespace Presentation
             this.cbxHs = new MaterialSkin.Controls.MaterialComboBox();
             this.cbxHs2 = new MaterialSkin.Controls.MaterialComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cbxDomingo = new MaterialSkin.Controls.MaterialCheckbox();
+            this.cbxSabado = new MaterialSkin.Controls.MaterialCheckbox();
+            this.cbxViernes = new MaterialSkin.Controls.MaterialCheckbox();
+            this.cbxJueves = new MaterialSkin.Controls.MaterialCheckbox();
+            this.cbxMiercoles = new MaterialSkin.Controls.MaterialCheckbox();
+            this.cbxMartes = new MaterialSkin.Controls.MaterialCheckbox();
+            this.cbxLunes = new MaterialSkin.Controls.MaterialCheckbox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -74,7 +81,7 @@ namespace Presentation
             // 
             this.panel5.Controls.Add(this.btnCancel);
             this.panel5.Controls.Add(this.btnSave);
-            this.panel5.Location = new System.Drawing.Point(209, 275);
+            this.panel5.Location = new System.Drawing.Point(155, 286);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(251, 58);
             this.panel5.TabIndex = 22;
@@ -86,7 +93,7 @@ namespace Presentation
             this.btnCancel.Depth = 0;
             this.btnCancel.HighEmphasis = true;
             this.btnCancel.Icon = null;
-            this.btnCancel.Location = new System.Drawing.Point(147, 7);
+            this.btnCancel.Location = new System.Drawing.Point(134, 7);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnCancel.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCancel.Name = "btnCancel";
@@ -106,7 +113,7 @@ namespace Presentation
             this.btnSave.Depth = 0;
             this.btnSave.HighEmphasis = true;
             this.btnSave.Icon = null;
-            this.btnSave.Location = new System.Drawing.Point(42, 7);
+            this.btnSave.Location = new System.Drawing.Point(44, 7);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnSave.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSave.Name = "btnSave";
@@ -134,7 +141,7 @@ namespace Presentation
             this.lblCourse.Depth = 0;
             this.lblCourse.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblCourse.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCourse.Location = new System.Drawing.Point(50, 9);
+            this.lblCourse.Location = new System.Drawing.Point(43, 11);
             this.lblCourse.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblCourse.Name = "lblCourse";
             this.lblCourse.Size = new System.Drawing.Size(50, 19);
@@ -165,7 +172,7 @@ namespace Presentation
             // 
             this.panel2.Controls.Add(this.txtInstitute);
             this.panel2.Controls.Add(this.lblInstitute);
-            this.panel2.Location = new System.Drawing.Point(17, 170);
+            this.panel2.Location = new System.Drawing.Point(17, 186);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(443, 52);
             this.panel2.TabIndex = 19;
@@ -194,7 +201,7 @@ namespace Presentation
             this.lblInstitute.AutoSize = true;
             this.lblInstitute.Depth = 0;
             this.lblInstitute.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblInstitute.Location = new System.Drawing.Point(13, 21);
+            this.lblInstitute.Location = new System.Drawing.Point(17, 21);
             this.lblInstitute.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblInstitute.Name = "lblInstitute";
             this.lblInstitute.Size = new System.Drawing.Size(83, 19);
@@ -205,7 +212,7 @@ namespace Presentation
             // 
             this.panel1.Controls.Add(this.txtLevel);
             this.panel1.Controls.Add(this.lblLevel);
-            this.panel1.Location = new System.Drawing.Point(17, 217);
+            this.panel1.Location = new System.Drawing.Point(17, 233);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(443, 58);
             this.panel1.TabIndex = 18;
@@ -246,7 +253,7 @@ namespace Presentation
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(52, 16);
+            this.materialLabel1.Location = new System.Drawing.Point(49, 22);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(41, 19);
@@ -313,18 +320,138 @@ namespace Presentation
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.cbxDomingo);
+            this.panel3.Controls.Add(this.cbxSabado);
+            this.panel3.Controls.Add(this.cbxViernes);
+            this.panel3.Controls.Add(this.cbxJueves);
+            this.panel3.Controls.Add(this.cbxMiercoles);
+            this.panel3.Controls.Add(this.cbxMartes);
+            this.panel3.Controls.Add(this.cbxLunes);
             this.panel3.Controls.Add(this.materialLabel1);
             this.panel3.Location = new System.Drawing.Point(17, 76);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(443, 51);
+            this.panel3.Size = new System.Drawing.Size(443, 68);
             this.panel3.TabIndex = 27;
+            // 
+            // cbxDomingo
+            // 
+            this.cbxDomingo.AutoSize = true;
+            this.cbxDomingo.Depth = 0;
+            this.cbxDomingo.Location = new System.Drawing.Point(235, 30);
+            this.cbxDomingo.Margin = new System.Windows.Forms.Padding(0);
+            this.cbxDomingo.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.cbxDomingo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cbxDomingo.Name = "cbxDomingo";
+            this.cbxDomingo.ReadOnly = false;
+            this.cbxDomingo.Ripple = true;
+            this.cbxDomingo.Size = new System.Drawing.Size(100, 37);
+            this.cbxDomingo.TabIndex = 14;
+            this.cbxDomingo.Text = "Domingo";
+            this.cbxDomingo.UseVisualStyleBackColor = true;
+            // 
+            // cbxSabado
+            // 
+            this.cbxSabado.AutoSize = true;
+            this.cbxSabado.Depth = 0;
+            this.cbxSabado.Location = new System.Drawing.Point(163, 31);
+            this.cbxSabado.Margin = new System.Windows.Forms.Padding(0);
+            this.cbxSabado.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.cbxSabado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cbxSabado.Name = "cbxSabado";
+            this.cbxSabado.ReadOnly = false;
+            this.cbxSabado.Ripple = true;
+            this.cbxSabado.Size = new System.Drawing.Size(90, 37);
+            this.cbxSabado.TabIndex = 13;
+            this.cbxSabado.Text = "Sábado";
+            this.cbxSabado.UseVisualStyleBackColor = true;
+            // 
+            // cbxViernes
+            // 
+            this.cbxViernes.AutoSize = true;
+            this.cbxViernes.BackColor = System.Drawing.Color.Transparent;
+            this.cbxViernes.Depth = 0;
+            this.cbxViernes.Location = new System.Drawing.Point(96, 31);
+            this.cbxViernes.Margin = new System.Windows.Forms.Padding(0);
+            this.cbxViernes.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.cbxViernes.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cbxViernes.Name = "cbxViernes";
+            this.cbxViernes.ReadOnly = false;
+            this.cbxViernes.Ripple = true;
+            this.cbxViernes.Size = new System.Drawing.Size(87, 37);
+            this.cbxViernes.TabIndex = 12;
+            this.cbxViernes.Text = "Viernes";
+            this.cbxViernes.UseVisualStyleBackColor = false;
+            // 
+            // cbxJueves
+            // 
+            this.cbxJueves.AutoSize = true;
+            this.cbxJueves.Depth = 0;
+            this.cbxJueves.Location = new System.Drawing.Point(319, 2);
+            this.cbxJueves.Margin = new System.Windows.Forms.Padding(0);
+            this.cbxJueves.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.cbxJueves.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cbxJueves.Name = "cbxJueves";
+            this.cbxJueves.ReadOnly = false;
+            this.cbxJueves.Ripple = true;
+            this.cbxJueves.Size = new System.Drawing.Size(85, 37);
+            this.cbxJueves.TabIndex = 11;
+            this.cbxJueves.Text = "Jueves";
+            this.cbxJueves.UseVisualStyleBackColor = true;
+            // 
+            // cbxMiercoles
+            // 
+            this.cbxMiercoles.AutoSize = true;
+            this.cbxMiercoles.Depth = 0;
+            this.cbxMiercoles.Location = new System.Drawing.Point(235, 1);
+            this.cbxMiercoles.Margin = new System.Windows.Forms.Padding(0);
+            this.cbxMiercoles.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.cbxMiercoles.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cbxMiercoles.Name = "cbxMiercoles";
+            this.cbxMiercoles.ReadOnly = false;
+            this.cbxMiercoles.Ripple = true;
+            this.cbxMiercoles.Size = new System.Drawing.Size(103, 37);
+            this.cbxMiercoles.TabIndex = 10;
+            this.cbxMiercoles.Text = "Miércoles";
+            this.cbxMiercoles.UseVisualStyleBackColor = true;
+            // 
+            // cbxMartes
+            // 
+            this.cbxMartes.AutoSize = true;
+            this.cbxMartes.Depth = 0;
+            this.cbxMartes.Location = new System.Drawing.Point(163, 1);
+            this.cbxMartes.Margin = new System.Windows.Forms.Padding(0);
+            this.cbxMartes.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.cbxMartes.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cbxMartes.Name = "cbxMartes";
+            this.cbxMartes.ReadOnly = false;
+            this.cbxMartes.Ripple = true;
+            this.cbxMartes.Size = new System.Drawing.Size(84, 37);
+            this.cbxMartes.TabIndex = 9;
+            this.cbxMartes.Text = "Martes";
+            this.cbxMartes.UseVisualStyleBackColor = true;
+            // 
+            // cbxLunes
+            // 
+            this.cbxLunes.AutoSize = true;
+            this.cbxLunes.Depth = 0;
+            this.cbxLunes.Location = new System.Drawing.Point(96, 1);
+            this.cbxLunes.Margin = new System.Windows.Forms.Padding(0);
+            this.cbxLunes.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.cbxLunes.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cbxLunes.Name = "cbxLunes";
+            this.cbxLunes.ReadOnly = false;
+            this.cbxLunes.Ripple = true;
+            this.cbxLunes.Size = new System.Drawing.Size(78, 37);
+            this.cbxLunes.TabIndex = 4;
+            this.cbxLunes.Text = "Lunes";
+            this.cbxLunes.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.materialLabel2);
             this.panel6.Controls.Add(this.cbxHs);
             this.panel6.Controls.Add(this.cbxHs2);
-            this.panel6.Location = new System.Drawing.Point(17, 134);
+            this.panel6.Location = new System.Drawing.Point(17, 150);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(443, 49);
             this.panel6.TabIndex = 28;
@@ -385,5 +512,12 @@ namespace Presentation
         private MaterialSkin.Controls.MaterialComboBox cbxHs2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel6;
+        private MaterialSkin.Controls.MaterialCheckbox cbxDomingo;
+        private MaterialSkin.Controls.MaterialCheckbox cbxSabado;
+        private MaterialSkin.Controls.MaterialCheckbox cbxViernes;
+        private MaterialSkin.Controls.MaterialCheckbox cbxJueves;
+        private MaterialSkin.Controls.MaterialCheckbox cbxMiercoles;
+        private MaterialSkin.Controls.MaterialCheckbox cbxMartes;
+        private MaterialSkin.Controls.MaterialCheckbox cbxLunes;
     }
 }

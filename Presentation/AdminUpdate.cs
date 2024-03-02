@@ -38,6 +38,11 @@ namespace Presentation
             txtLevel.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txtLevel.Width, txtLevel.Height, 5, 5));
             cbxHs.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, cbxHs.Width, cbxHs.Height, 5, 5));
             cbxHs2.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, cbxHs2.Width, cbxHs2.Height, 5, 5));
+            cbxHs.DataSource = setHs();
+            cbxHs2.DataSource = setHs();
+
+            cbxHs.SelectedIndex = -1;
+            cbxHs2.SelectedIndex = -1;
 
         }
 
@@ -64,9 +69,27 @@ namespace Presentation
 
         }
 
+        private static List<string> setHs()
+        {
+            List<string> list = new List<string>();
+
+
+            for (int i = 6; i <= 23; i++)
+            {
+                for (int min = 0; min < 60; min += 30)
+                {
+                    string hs = $"{i % 12}:{min:D2} {(i < 12 ? "am" : "pm")}";
+                    list.Add(hs);
+                }
+            }
+
+            return list;
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
         }
+
     }
 }
