@@ -15,6 +15,10 @@ namespace Presentation
 {
     public partial class AdminUpdate : Form
     {
+        string days = "";
+        string hsFinal = "";
+
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -30,7 +34,6 @@ namespace Presentation
         {
             InitializeComponent();
             txtCourse.Text = cour.CoursesClasses;
-            //txtDays.Text = cour.Days;
             txtInstitute.Text = cour.Institution;
             txtLevel.Text = cour.Level;
             txtCourse.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txtCourse.Width, txtCourse.Height, 5, 5));
@@ -51,13 +54,14 @@ namespace Presentation
             CoursesManager cm = new CoursesManager();
             Courses course = new Courses();
             course.CoursesClasses = txtCourse.Text;
-           // course.Days = txtDays.Text;
+           
             course.Institution = txtInstitute.Text;
             course.Level = txtLevel.Text;
             course.Id = AppData.id;
 
             if (txtCourse.Text != "" && txtCourse != null &&
               // txtDays.Text != "" && txtDays != null &&
+
                txtInstitute.Text != "" && txtInstitute != null &&
                txtLevel.Text != "" && txtLevel != null)
             {
@@ -84,6 +88,31 @@ namespace Presentation
             }
 
             return list;
+        }
+
+        private string setDays()
+        {
+            if (cbxHs.SelectedIndex < cbxHs2.SelectedIndex)
+                hsFinal = $" {cbxHs.Text} - {cbxHs2.Text}";
+
+            List<string> Select = new List<string> { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo" };
+
+            for (int i = 0; i < 7; i++)
+            {
+                CheckBox checkbox = (CheckBox)Controls.Find("check" + Select[i], true).FirstOrDefault();
+
+                if (checkbox.Checked)
+                {
+                    if (days != "")
+                        days += ", " + Select[i];
+                    else
+                        days += Select[i];
+                }
+
+            }
+            days = days + "  - " + hsFinal;
+
+            return days;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

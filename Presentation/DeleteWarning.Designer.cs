@@ -39,21 +39,21 @@ namespace Presentation
             // lblWarning1
             // 
             this.lblWarning1.AutoSize = true;
-            this.lblWarning1.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWarning1.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWarning1.ForeColor = System.Drawing.Color.Red;
-            this.lblWarning1.Location = new System.Drawing.Point(144, 59);
+            this.lblWarning1.Location = new System.Drawing.Point(142, 60);
             this.lblWarning1.Name = "lblWarning1";
-            this.lblWarning1.Size = new System.Drawing.Size(254, 29);
+            this.lblWarning1.Size = new System.Drawing.Size(232, 25);
             this.lblWarning1.TabIndex = 0;
             this.lblWarning1.Text = "Se eliminará el registro: ";
             // 
             // lblCourse
             // 
             this.lblCourse.AutoSize = true;
-            this.lblCourse.BackColor = System.Drawing.Color.White;
+            this.lblCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.lblCourse.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCourse.ForeColor = System.Drawing.Color.Black;
-            this.lblCourse.Location = new System.Drawing.Point(165, 109);
+            this.lblCourse.Location = new System.Drawing.Point(133, 109);
             this.lblCourse.Name = "lblCourse";
             this.lblCourse.Size = new System.Drawing.Size(146, 26);
             this.lblCourse.TabIndex = 1;
@@ -108,7 +108,7 @@ namespace Presentation
             // lblStudent
             // 
             this.lblStudent.AutoSize = true;
-            this.lblStudent.BackColor = System.Drawing.Color.White;
+            this.lblStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.lblStudent.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStudent.ForeColor = System.Drawing.Color.Black;
             this.lblStudent.Location = new System.Drawing.Point(107, 109);
@@ -122,7 +122,7 @@ namespace Presentation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.ClientSize = new System.Drawing.Size(498, 371);
             this.Controls.Add(this.lblStudent);
             this.Controls.Add(this.btnAcept);

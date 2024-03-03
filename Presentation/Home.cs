@@ -104,9 +104,10 @@ namespace Presentation
             }*/
         }
 
-
-
-
+        private void btnUpdateGrid_Click(object sender, EventArgs e)
+        {
+            UpdateGrid();
+        }
     }
 }
 

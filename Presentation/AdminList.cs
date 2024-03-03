@@ -28,6 +28,7 @@ namespace Presentation
         private bool details = false;
         string name;
 
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -46,12 +47,20 @@ namespace Presentation
             InitializeComponent();
             dgvList.BorderStyle = BorderStyle.None;
             dgvData.BorderStyle = BorderStyle.None;
-            dgvList.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, dgvList.MaximumSize.Width, dgvList.MaximumSize.Height, 5, 5));
+            dgvList.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, dgvList.Width, dgvList.Height, 5, 5));
             dgvData.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, dgvData.Width, dgvData.Height, 5, 5));
             cbxAdd.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, cbxAdd.Width, cbxAdd.Height, 5, 5));
             if (index == 0)
+            {
                 UpdateCourses();
-            else { 
+                dgvList.Columns["level"].Visible = false;
+                dgvList.Columns["CoursesClasses"].Width = 65;
+                dgvList.Columns["days"].Width = 120;
+                dgvList.Columns["Institution"].Width = 95;
+
+            }
+            else
+            {
                 UpdateStudents();
                 dgvList.Columns["lastName"].Width = 180;
             }
@@ -59,17 +68,17 @@ namespace Presentation
 
             dgvList.ClearSelection();
             dgvList.CurrentCell = null;
-            
+
+
 
 
         }
-
         private void UpdateCourses()
-        {                
+        {
             listCourses = courses.ListCourses();
             listAvailableC = courses.ListCoursesAvailable();
             AppData.openPanel = "ListCourses";
-            
+
 
             try
             {
@@ -78,7 +87,7 @@ namespace Presentation
                 else
                     dgvList.DataSource = listCourses;
                 dgvList.Columns["id"].Visible = false;
-                if(!swAvailable)
+                if (!swAvailable)
                     dgvList.Columns["available"].Visible = false;
 
                 dgvList.ClearSelection();
@@ -106,7 +115,7 @@ namespace Presentation
                 else
                     dgvList.DataSource = listStudents;
                 dgvList.Columns["id"].Visible = false;
-                
+
                 if (!swAvailable)
                     dgvList.Columns["available"].Visible = false;
 
@@ -124,7 +133,9 @@ namespace Presentation
             dgvData.DataSource = courses.listStudents(AppData.id);
             dgvData.Columns["id"].Visible = false;
             dgvData.Columns[3].Visible = false;
-            lblTitle.Text = courses.findByid(AppData.id).CoursesClasses.ToUpper();
+            string name = courses.findNameByid(AppData.id).ToUpper();
+            lblTitle.Text = name;
+            Console.WriteLine("find name by id:"+name);
 
 
             List<Student> list = students.ListStudentsAvailable();
@@ -138,36 +149,9 @@ namespace Presentation
             }
 
         }
-
-        private void dgvList_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-
-            if (dgvList.SelectedRows.Count != 0)
-            {
-                DataGridViewRow selectedRow = dgvList.SelectedRows[0];
-
-                int idValue = (int)selectedRow.Cells["id"].Value;
-                AppData.id = idValue;
-                Console.WriteLine(AppData.id);
-                if (index == 0)
-                {
-                    selectedCourses = courses.findByid(idValue);
-                    AppData.SelectedItem = selectedCourses;
-                
-                }
-                else
-                {
-                    selectedStudent = students.findByid(idValue);
-                    AppData.SelectedItem = selectedStudent;
-                }
-
-            }
-
-        }
-
         private void btnDetails_Click(object sender, EventArgs e)
         {
-            if (!details) { 
+            if (!details) {
                 details = true;
                 dgvList.Visible = false;
                 cbxAdd.Visible = true;
@@ -176,7 +160,7 @@ namespace Presentation
                 lblTitle.Visible = true;
                 btnDetails.Text = "Volver";
                 Datails();
-                
+
 
             }
             else
@@ -190,14 +174,44 @@ namespace Presentation
                 btnDetails.Text = "Detalle";
 
             }
-           
+
         }
 
         private void btnAddData_Click(object sender, EventArgs e)
         {
-            ///////   check the idStudent  ↓ 
-            students.AddCourse(AppData.id, cbxAdd.SelectedIndex+1);
+            ///                                     check this ↓ - create a method to find by name+lastName in DB
+            students.AddCourse(AppData.id, cbxAdd.SelectedIndex + 1);
 
+        }
+
+        private void cbxAdd_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvList_RowEnter_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (dgvList.SelectedRows.Count != 0)
+            {
+                DataGridViewRow selectedRow = dgvList.SelectedRows[0];
+
+                int idValue = (int)selectedRow.Cells["id"].Value;
+                AppData.id = idValue;
+                Console.WriteLine(AppData.id);
+                if (index == 0)
+                {
+                    selectedCourses = courses.findByid(idValue);
+                    AppData.SelectedItem = selectedCourses;
+
+                }
+                else
+                {
+                    selectedStudent = students.findByid(idValue);
+                    AppData.SelectedItem = selectedStudent;
+                }
+
+            }
         }
     }
 }
