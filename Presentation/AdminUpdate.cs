@@ -18,7 +18,6 @@ namespace Presentation
         string days = "";
         string hsFinal = "";
 
-
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -36,6 +35,7 @@ namespace Presentation
             txtCourse.Text = cour.CoursesClasses;
             txtInstitute.Text = cour.Institution;
             txtLevel.Text = cour.Level;
+            checkDays(cour.Days);
             txtCourse.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txtCourse.Width, txtCourse.Height, 5, 5));
             txtInstitute.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txtInstitute.Width, txtInstitute.Height, 5, 5));
             txtLevel.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txtLevel.Width, txtLevel.Height, 5, 5));
@@ -43,7 +43,6 @@ namespace Presentation
             cbxHs2.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, cbxHs2.Width, cbxHs2.Height, 5, 5));
             cbxHs.DataSource = setHs();
             cbxHs2.DataSource = setHs();
-
             cbxHs.SelectedIndex = -1;
             cbxHs2.SelectedIndex = -1;
 
@@ -54,13 +53,13 @@ namespace Presentation
             CoursesManager cm = new CoursesManager();
             Courses course = new Courses();
             course.CoursesClasses = txtCourse.Text;
-           
+
             course.Institution = txtInstitute.Text;
             course.Level = txtLevel.Text;
             course.Id = AppData.id;
 
             if (txtCourse.Text != "" && txtCourse != null &&
-              // txtDays.Text != "" && txtDays != null &&
+               // txtDays.Text != "" && txtDays != null &&
 
                txtInstitute.Text != "" && txtInstitute != null &&
                txtLevel.Text != "" && txtLevel != null)
@@ -120,5 +119,36 @@ namespace Presentation
             Close();
         }
 
+
+        //check this method ↓
+        private void checkDays(string courDays)
+        {
+            List<string> dayList = new List<string> { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" };
+            List<string> dayListCopy = new List<string> { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo" };
+
+            for (int i=0;i<dayList.Count();i++)
+            {
+
+                Console.WriteLine("los días son:"+courDays+" y day en daylist es igual a: "+dayList[i]);
+                CheckBox checkbox = GetCheckBoxByName("cbx" + dayListCopy[i]);
+
+                if (courDays.Contains(dayList[i]))
+                {
+                    checkbox.Checked = true;
+                }
+            }
+        }
+
+        private CheckBox GetCheckBoxByName(string name)
+        {
+            foreach (Control control in Controls)
+            {
+                if (control is CheckBox checkbox && control.Name == name)
+                {
+                    return checkbox;
+                }
+            }
+            return null;
+        }
     }
 }
