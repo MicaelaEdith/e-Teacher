@@ -135,7 +135,6 @@ namespace Presentation
             dgvData.Columns[3].Visible = false;
             string name = courses.findNameByid(AppData.id).ToUpper();
             lblTitle.Text = name;
-            Console.WriteLine("find name by id:"+name);
 
 
             List<Student> list = students.ListStudentsAvailable();
