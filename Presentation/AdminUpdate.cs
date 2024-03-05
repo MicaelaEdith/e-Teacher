@@ -36,6 +36,7 @@ namespace Presentation
             txtInstitute.Text = cour.Institution;
             txtLevel.Text = cour.Level;
             checkDays(cour.Days);
+            setHs(cour.Days);
             txtCourse.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txtCourse.Width, txtCourse.Height, 5, 5));
             txtInstitute.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txtInstitute.Width, txtInstitute.Height, 5, 5));
             txtLevel.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txtLevel.Width, txtLevel.Height, 5, 5));
@@ -53,7 +54,7 @@ namespace Presentation
             CoursesManager cm = new CoursesManager();
             Courses course = new Courses();
             course.CoursesClasses = txtCourse.Text;
-
+            course.Days = setDays();
             course.Institution = txtInstitute.Text;
             course.Level = txtLevel.Text;
             course.Id = AppData.id;
@@ -114,41 +115,48 @@ namespace Presentation
             return days;
         }
 
+        // check this method ↓
+        private void setHs(string input)
+        {
+
+            string[] parts = input.Split('-');
+
+            Console.WriteLine(parts);
+            
+
+            if (parts.Length == 2)
+            {
+                string hs1 = parts[0].Trim();
+                string hs2 = parts[1].Trim();
+
+                cbxHs.SelectedValue = hs1;
+                cbxHs2.SelectedValue = hs2;
+                Console.WriteLine("hs1: " + hs1.ToString());
+                Console.WriteLine("hs2: " + hs2.ToString());
+            }
+
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
         }
 
 
-        //check this method ↓
         private void checkDays(string courDays)
         {
             List<string> dayList = new List<string> { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" };
             List<string> dayListCopy = new List<string> { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo" };
 
-            for (int i=0;i<dayList.Count();i++)
+            for (int i=0;i<7;i++)
             {
-
-                Console.WriteLine("los días son:"+courDays+" y day en daylist es igual a: "+dayList[i]);
-                CheckBox checkbox = GetCheckBoxByName("cbx" + dayListCopy[i]);
+                CheckBox checkbox = (CheckBox)this.GetType().GetField("cbx" + dayListCopy[i], System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(this);
 
                 if (courDays.Contains(dayList[i]))
                 {
                     checkbox.Checked = true;
                 }
             }
-        }
-
-        private CheckBox GetCheckBoxByName(string name)
-        {
-            foreach (Control control in Controls)
-            {
-                if (control is CheckBox checkbox && control.Name == name)
-                {
-                    return checkbox;
-                }
-            }
-            return null;
         }
     }
 }
