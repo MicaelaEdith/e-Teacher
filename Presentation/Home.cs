@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Domain;
 using Business;
 using System.Runtime.InteropServices;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Presentation
 {
@@ -48,7 +49,7 @@ namespace Presentation
         {
             UpdateDiary();
             UpdateGrid();
-
+            AddDataChart1();
         }
         private void UpdateGrid()
         {
@@ -107,6 +108,30 @@ namespace Presentation
         private void btnUpdateGrid_Click(object sender, EventArgs e)
         {
             UpdateGrid();
+        }
+
+        private void AddDataChart1()
+        {
+            CoursesManager coursesManager = new CoursesManager();
+            Dictionary<string, int> countCourses = coursesManager.CountCourses();
+
+            chart1.Series.Clear();
+            chart1.ChartAreas[0].AxisX.Interval = 1;
+           
+            Series serieC = new Series("Cursos");
+            serieC.ChartType = SeriesChartType.Pie;
+
+   
+
+            foreach (var kvp in countCourses)
+            {
+                DataPoint point = new DataPoint();
+                point.Label = $"{kvp.Key} ({kvp.Value})";
+                point.SetValueY(kvp.Value);
+                serieC.Points.Add(point);
+                point["PieLabelStyle"] = "Disabled";
+            }
+            chart1.Series.Add(serieC);
         }
     }
 }

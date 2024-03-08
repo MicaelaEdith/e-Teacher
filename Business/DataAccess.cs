@@ -21,7 +21,7 @@ namespace Business
 
         public DataAccess()
         {
-            connection = new SqlConnection("server=.\\SQLEXPRESS; database=profe_app; integrated security=true");
+            connection = new SqlConnection("server=.\\SQLEXPRESS; database=E-TEACHER_DB; integrated security=true");
             command = new SqlCommand();
         }
 

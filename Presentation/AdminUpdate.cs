@@ -141,7 +141,7 @@ namespace Presentation
             {
                 CheckBox checkbox = (CheckBox)this.GetType().GetField("cbx" + dayListCopy[i], System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(this);
 
-                if (courDays.Contains(dayList[i]) || courDays.Contains(dayListCopy[i]))
+                if (courDays.Contains(dayList[i]))
                 {
                     checkbox.Checked = true;
                 }

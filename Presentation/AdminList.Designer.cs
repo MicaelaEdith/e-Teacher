@@ -146,8 +146,9 @@ namespace Presentation
             this.dgvData.RowHeadersVisible = false;
             this.dgvData.RowTemplate.Height = 30;
             this.dgvData.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvData.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvData.Size = new System.Drawing.Size(409, 269);
+            this.dgvData.Size = new System.Drawing.Size(541, 269);
             this.dgvData.TabIndex = 5;
             this.dgvData.Visible = false;
             // 
@@ -189,7 +190,8 @@ namespace Presentation
             this.dgvList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvList.EnableHeadersVisualStyles = false;
             this.dgvList.GridColor = System.Drawing.Color.White;
-            this.dgvList.Location = new System.Drawing.Point(25, 35);
+            this.dgvList.Location = new System.Drawing.Point(25, 47);
+            this.dgvList.MultiSelect = false;
             this.dgvList.Name = "dgvList";
             this.dgvList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvList.RowHeadersVisible = false;
@@ -220,7 +222,7 @@ namespace Presentation
             this.cbxAdd.MaxDropDownItems = 4;
             this.cbxAdd.MouseState = MaterialSkin.MouseState.OUT;
             this.cbxAdd.Name = "cbxAdd";
-            this.cbxAdd.Size = new System.Drawing.Size(409, 35);
+            this.cbxAdd.Size = new System.Drawing.Size(541, 35);
             this.cbxAdd.StartIndex = 0;
             this.cbxAdd.TabIndex = 6;
             this.cbxAdd.UseTallSize = false;

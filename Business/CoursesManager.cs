@@ -254,5 +254,47 @@ namespace Business
             }
 
         }
+
+        public Dictionary<string, int> CountCourses()
+        {
+            List<Courses> listCourses = new List<Courses>();
+            DataAccess data = new DataAccess();
+            Dictionary<string, int> coursesList = new Dictionary<string, int>();
+
+            try
+            {
+                data.Query("SELECT TOP 5 curso_materia, COUNT(curso_materia) as cantidad_repeticiones FROM cursos GROUP BY curso_materia;");
+                data.Read();
+
+                while (data.Reader.Read())
+                {
+                    Courses aux = new Courses();
+
+                    aux.CoursesClasses = (string)data.Reader["curso_materia"];
+                  
+
+                    listCourses.Add(aux);
+
+                    string name = data.Reader["curso_materia"].ToString();
+                    int count = Convert.ToInt32(data.Reader["cantidad_repeticiones"]);
+                    coursesList.Add(name, count);
+
+
+
+                }
+                return coursesList;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                data.closeConnection();
+            }
+        }
+
     }
 }
