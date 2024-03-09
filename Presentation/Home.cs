@@ -108,20 +108,23 @@ namespace Presentation
         private void btnUpdateGrid_Click(object sender, EventArgs e)
         {
             UpdateGrid();
+            AddDataChart1();
         }
 
         private void AddDataChart1()
         {
             CoursesManager coursesManager = new CoursesManager();
             Dictionary<string, int> countCourses = coursesManager.CountCourses();
+            
+            if (chart1.Series.Any())
+            {
+                chart1.Series.Clear();
+            }
 
-            chart1.Series.Clear();
             chart1.ChartAreas[0].AxisX.Interval = 1;
-           
+
             Series serieC = new Series("Cursos");
             serieC.ChartType = SeriesChartType.Pie;
-
-   
 
             foreach (var kvp in countCourses)
             {
@@ -129,10 +132,23 @@ namespace Presentation
                 point.Label = $"{kvp.Key} ({kvp.Value})";
                 point.SetValueY(kvp.Value);
                 serieC.Points.Add(point);
-                point["PieLabelStyle"] = "Disabled";
             }
+
             chart1.Series.Add(serieC);
+
+            if (serieC.Points.Count > 0)
+            {
+                foreach (var point in serieC.Points)
+                {
+                    point["PieLabelStyle"] = "Disabled";
+                }
+            }
+            Legend legend = chart1.Legends[0];
+
+            legend.BackColor = System.Drawing.Color.Transparent;
+            legend.ForeColor = System.Drawing.Color.White;
         }
+
     }
 }
 
