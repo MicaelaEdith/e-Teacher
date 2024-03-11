@@ -50,6 +50,7 @@ namespace Presentation
             UpdateDiary();
             UpdateGrid();
             AddDataChart1();
+            AddDataChart2();
         }
         private void UpdateGrid()
         {
@@ -149,6 +150,16 @@ namespace Presentation
             legend.ForeColor = System.Drawing.Color.White;
         }
 
+        private void AddDataChart2() {
+
+            chart2.BackColor = System.Drawing.Color.Transparent;
+            chart2.ChartAreas[0].BackColor = Color.Transparent;
+
+            Legend legend = chart2.Legends[0];
+
+            legend.BackColor = System.Drawing.Color.Transparent;
+            legend.ForeColor = System.Drawing.Color.White;
+        }
     }
 }
 
