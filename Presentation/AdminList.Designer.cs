@@ -227,7 +227,6 @@ namespace Presentation
             this.cbxAdd.TabIndex = 6;
             this.cbxAdd.UseTallSize = false;
             this.cbxAdd.Visible = false;
-            this.cbxAdd.SelectedIndexChanged += new System.EventHandler(this.cbxAdd_SelectedIndexChanged);
             // 
             // AdminList
             // 

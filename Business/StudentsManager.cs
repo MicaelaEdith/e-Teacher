@@ -80,6 +80,41 @@ namespace Business
             }
         }
 
+        public List<Courses> ListCourses(int id)
+        {
+
+            List<Courses> listCourses = new List<Courses>();
+            DataAccess data = new DataAccess();
+
+            try
+            {
+                data.Query("SELECT c.curso_materia FROM cursos_alumnos ca JOIN cursos c ON ca.curso = c.id WHERE ca.alumno =" + id + ";");
+
+                data.Read();
+
+                while (data.Reader.Read())
+                {
+                    Courses aux = new Courses();
+
+                    aux.Id = (int)data.Reader["id"];
+                    aux.CoursesClasses = (string)data.Reader["curso"];
+                    
+                    listCourses.Add(aux);
+                }
+                return listCourses;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                data.closeConnection();
+            }
+        }
+
         public string findNameByid(int id)
         {
             string name = "";
@@ -215,8 +250,7 @@ namespace Business
 
             DataAccess data = new DataAccess();
             try
-            {
-                
+            {               
                 data.Query("INSERT INTO cursos_alumnos (curso, alumno) VALUES ("+idCourse+", "+idStudent+")");
                 data.Insert();
 

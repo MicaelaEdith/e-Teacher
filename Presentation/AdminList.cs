@@ -26,7 +26,8 @@ namespace Presentation
         private List<Courses> listAvailableC;
         private List<Student> listAvailableS;
         private bool details = false;
-        string name;
+
+
 
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -130,21 +131,37 @@ namespace Presentation
         }
         private void Datails()
         {
-            dgvData.DataSource = courses.listStudents(AppData.id);
-            dgvData.Columns["id"].Visible = false;
-            dgvData.Columns[3].Visible = false;
-            string name = courses.findNameByid(AppData.id).ToUpper();
-            lblTitle.Text = name;
-
-
-            List<Student> list = students.ListStudentsAvailable();
-
-
-            for (int i = 0; i < list.Count; i++)
+            if (AppData.SelectedItem is Courses)
             {
-                name += list[i].Name + " " + list[i].LastName;
-                cbxAdd.Items.Add(name);
-                name = "";
+                dgvData.DataSource = courses.listStudents(AppData.id);
+                dgvData.Columns["id"].Visible = false;
+                dgvData.Columns[3].Visible = false;
+                string name = courses.findNameByid(AppData.id).ToUpper();
+                lblTitle.Text = name;
+                List<Student> list = students.ListStudentsAvailable();
+
+                for (int i = 0; i < list.Count; i++)
+                {
+                    name += list[i].Name + " " + list[i].LastName;
+                    cbxAdd.Items.Add(name);
+                    name = "";
+                }
+
+            }
+            else
+            {
+                int id = AppData.id;
+                dgvData.DataSource = students.ListCourses(id);
+                List<Courses> list = courses.ListCoursesAvailable();
+                string name = students.findNameByid(AppData.id).ToUpper();
+                lblTitle.Text = name;
+
+                for (int i = 0; i < list.Count; i++)
+                {
+                    name = list[i].CoursesClasses;
+                    cbxAdd.Items.Add(name);
+                    name = "";
+                }
             }
 
         }
@@ -178,14 +195,20 @@ namespace Presentation
 
         private void btnAddData_Click(object sender, EventArgs e)
         {
-            ///                                     check this ↓ - create a method to find by name+lastName in DB
-            students.AddCourse(AppData.id, cbxAdd.SelectedIndex + 1);
-
-        }
-
-        private void cbxAdd_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            if (AppData.SelectedItem is Courses)
+            {
+                List<Student> list = students.ListStudentsAvailable();
+                int index = cbxAdd.SelectedIndex;
+                Console.WriteLine("index: " + index);
+                /// fix ↓
+                students.AddCourse(list[index].Id, AppData.id);
+            }
+            else
+            {
+                List<Courses> list = courses.ListCoursesAvailable();
+                int index = cbxAdd.SelectedIndex;
+                students.AddCourse(AppData.id, list[index].Id);
+            }
         }
 
         private void dgvList_RowEnter_1(object sender, DataGridViewCellEventArgs e)
