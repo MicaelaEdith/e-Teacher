@@ -97,7 +97,7 @@ namespace Business
                     Courses aux = new Courses();
 
                     aux.Id = (int)data.Reader["id"];
-                    aux.CoursesClasses = (string)data.Reader["curso"];
+                    aux.CoursesClasses = (string)data.Reader["curso_materia"];
                     
                     listCourses.Add(aux);
                 }
@@ -252,6 +252,28 @@ namespace Business
             try
             {               
                 data.Query("INSERT INTO cursos_alumnos (curso, alumno) VALUES ("+idCourse+", "+idStudent+")");
+                data.Insert();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+
+                data.closeConnection();
+            }
+
+        }
+
+        public void DeleteCourse(int idStudent, int idCourse)
+        {
+            DataAccess data = new DataAccess();
+            try
+            {
+                data.Query("DELETE from cursos_alumnos where curso= " + idCourse + " and alumno = " + idStudent);
                 data.Insert();
 
             }

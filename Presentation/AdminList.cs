@@ -129,7 +129,7 @@ namespace Presentation
                 throw ex;
             }
         }
-        private void Datails()
+        private void Details()
         {
             if (AppData.SelectedItem is Courses)
             {
@@ -172,10 +172,11 @@ namespace Presentation
                 dgvList.Visible = false;
                 cbxAdd.Visible = true;
                 btnAddData.Visible = true;
+                btnDelete.Visible = true;
                 dgvData.Visible = true;
                 lblTitle.Visible = true;
                 btnDetails.Text = "Volver";
-                Datails();
+                Details();
 
 
             }
@@ -187,6 +188,7 @@ namespace Presentation
                 cbxAdd.Visible = false;
                 lblTitle.Visible = false;
                 btnAddData.Visible = false;
+                btnDelete.Visible = false;
                 btnDetails.Text = "Detalle";
 
             }
@@ -197,17 +199,21 @@ namespace Presentation
         {
             if (AppData.SelectedItem is Courses)
             {
-                List<Student> list = students.ListStudentsAvailable();
-                int index = cbxAdd.SelectedIndex;
-                Console.WriteLine("index: " + index);
-                /// fix ↓
-                students.AddCourse(list[index].Id, AppData.id);
+                if (cbxAdd.SelectedIndex > 0)
+                {
+                    List<Student> list = students.ListStudentsAvailable();
+                    int index = cbxAdd.SelectedIndex;
+                    Console.WriteLine("index: " + index);
+                    students.AddCourse(list[index].Id, AppData.id);
+                    Details();
+                }
             }
             else
             {
                 List<Courses> list = courses.ListCoursesAvailable();
                 int index = cbxAdd.SelectedIndex;
                 students.AddCourse(AppData.id, list[index].Id);
+                Details();
             }
         }
 
@@ -234,6 +240,29 @@ namespace Presentation
                 }
 
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+            // check ↓
+
+            DataGridViewRow selectedRow = dgvList.SelectedRows[0];
+            if (AppData.SelectedItem is Courses)
+            {
+                students.DeleteCourse((int)selectedRow.Cells["id"].Value, AppData.id);
+                Console.WriteLine("borrar alumno: "+selectedRow.ToString()+" curso: "+AppData.id);
+                cbxAdd.SelectedIndex = -1;
+                Details();
+            }
+            else
+            {
+                List<Courses> list = courses.ListCoursesAvailable();
+                int index = cbxAdd.SelectedIndex;
+                students.AddCourse(AppData.id, list[index].Id);
+                Details();
+            }
+
         }
     }
 }
