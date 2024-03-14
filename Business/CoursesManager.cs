@@ -263,7 +263,7 @@ namespace Business
 
             try
             {
-                data.Query("SELECT TOP 5 curso_materia, COUNT(curso_materia) as cantidad_repeticiones FROM cursos GROUP BY curso_materia ORDER BY cantidad_repeticiones DESC;");
+                data.Query("SELECT TOP 4 curso_materia, COUNT(curso_materia) as cantidad_repeticiones FROM cursos where activo = 1 GROUP BY curso_materia ORDER BY cantidad_repeticiones DESC;");
                 data.Read();
 
                 while (data.Reader.Read())

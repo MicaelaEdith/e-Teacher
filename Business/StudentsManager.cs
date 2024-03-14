@@ -96,7 +96,7 @@ namespace Business
                 {
                     Courses aux = new Courses();
 
-                    aux.Id = id;
+                    aux.Id = (int)data.Reader["Id"];
                     aux.CoursesClasses = (string)data.Reader["curso_materia"];
                     aux.Days = (string)data.Reader["dia_horario"];
                     aux.Institution = (string)data.Reader["institucion"];

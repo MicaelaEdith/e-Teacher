@@ -163,7 +163,7 @@ namespace Presentation
             // 
             this.menuStrip1.Location = new System.Drawing.Point(3, 64);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1012, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1028, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -285,7 +285,7 @@ namespace Presentation
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1018, 550);
+            this.ClientSize = new System.Drawing.Size(1034, 550);
             this.Controls.Add(this.btnUpdateGrid);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.materialCard1);

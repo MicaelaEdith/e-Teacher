@@ -150,6 +150,7 @@ namespace Presentation
             }
             else
             {
+                selectedStudent = (Student)AppData.SelectedItem;
                 dgvData.DataSource = students.ListCourses(AppData.id);
                 dgvData.Columns["id"].Visible = false;
                 dgvData.Columns["level"].Visible = false;
@@ -209,7 +210,6 @@ namespace Presentation
                 {
                     List<Student> list = students.ListStudentsAvailable();
                     int index = cbxAdd.SelectedIndex;
-                    Console.WriteLine("index: " + index);
                     students.AddCourse(list[index].Id, AppData.id);
                     Details();
                 }
@@ -232,7 +232,6 @@ namespace Presentation
 
                 int idValue = (int)selectedRow.Cells["id"].Value;
                 AppData.id = idValue;
-                Console.WriteLine(AppData.id);
                 if (index == 0)
                 {
                     selectedCourses = courses.findByid(idValue);
@@ -261,12 +260,30 @@ namespace Presentation
                     Details();
                 }
                 else
-                {    //   check ↓
-                    Courses course = (Courses)selectedRow.DataBoundItem; ;
+                {   
+                    Courses course = (Courses)selectedRow.DataBoundItem;
                     students.DeleteCourse(AppData.id, course.Id);
                     cbxAdd.SelectedIndex = -1;
                     Details();
                 }
+            }
+
+        }
+
+        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow selectedRow = dgvData.SelectedRows[0];
+
+            if (AppData.SelectedItem is Student)
+            {
+                Courses course = (Courses)selectedRow.DataBoundItem;
+                selectedCourses = course;
+            }
+
+            if (AppData.SelectedItem is Courses)
+            {
+                Student student = (Student)selectedRow.DataBoundItem;
+                selectedStudent = student;
             }
 
         }
