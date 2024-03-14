@@ -88,7 +88,7 @@ namespace Business
 
             try
             {
-                data.Query("SELECT c.curso_materia FROM cursos_alumnos ca JOIN cursos c ON ca.curso = c.id WHERE ca.alumno =" + id + ";");
+                data.Query("SELECT c.id, c.curso_materia, c.dia_horario, c.institucion FROM cursos_alumnos ca JOIN cursos c ON ca.curso = c.id WHERE ca.alumno =" + id + ";");
 
                 data.Read();
 
@@ -96,9 +96,11 @@ namespace Business
                 {
                     Courses aux = new Courses();
 
-                    aux.Id = (int)data.Reader["id"];
+                    aux.Id = id;
                     aux.CoursesClasses = (string)data.Reader["curso_materia"];
-                    
+                    aux.Days = (string)data.Reader["dia_horario"];
+                    aux.Institution = (string)data.Reader["institucion"];
+
                     listCourses.Add(aux);
                 }
                 return listCourses;

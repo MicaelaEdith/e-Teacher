@@ -150,8 +150,10 @@ namespace Presentation
             }
             else
             {
-                int id = AppData.id;
-                dgvData.DataSource = students.ListCourses(id);
+                dgvData.DataSource = students.ListCourses(AppData.id);
+                dgvData.Columns["id"].Visible = false;
+                dgvData.Columns["level"].Visible = false;
+                dgvData.Columns["available"].Visible = false;
                 List<Courses> list = courses.ListCoursesAvailable();
                 string name = students.findNameByid(AppData.id).ToUpper();
                 lblTitle.Text = name;
@@ -162,6 +164,10 @@ namespace Presentation
                     cbxAdd.Items.Add(name);
                     name = "";
                 }
+
+                dgvData.Columns["CoursesClasses"].Width = 75;
+                dgvData.Columns["Days"].Width = 135;
+                dgvData.Columns["Institution"].Width = 125;
             }
 
         }
@@ -244,23 +250,23 @@ namespace Presentation
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
-            // check ↓
-
-            DataGridViewRow selectedRow = dgvList.SelectedRows[0];
-            if (AppData.SelectedItem is Courses)
+            if (dgvData.SelectedRows.Count > 0)
             {
-                students.DeleteCourse((int)selectedRow.Cells["id"].Value, AppData.id);
-                Console.WriteLine("borrar alumno: "+selectedRow.ToString()+" curso: "+AppData.id);
-                cbxAdd.SelectedIndex = -1;
-                Details();
-            }
-            else
-            {
-                List<Courses> list = courses.ListCoursesAvailable();
-                int index = cbxAdd.SelectedIndex;
-                students.AddCourse(AppData.id, list[index].Id);
-                Details();
+                DataGridViewRow selectedRow = dgvData.SelectedRows[0];
+                if (AppData.SelectedItem is Courses)
+                {
+                    Student student = (Student)selectedRow.DataBoundItem;
+                    students.DeleteCourse(student.Id, AppData.id);
+                    cbxAdd.SelectedIndex = -1;
+                    Details();
+                }
+                else
+                {    //   check ↓
+                    Courses course = (Courses)selectedRow.DataBoundItem; ;
+                    students.DeleteCourse(AppData.id, course.Id);
+                    cbxAdd.SelectedIndex = -1;
+                    Details();
+                }
             }
 
         }
