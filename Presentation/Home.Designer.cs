@@ -32,12 +32,12 @@ namespace Presentation
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dgvCourses = new System.Windows.Forms.DataGridView();
             this.Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaHorario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,14 +46,14 @@ namespace Presentation
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnAdmin = new MaterialSkin.Controls.MaterialButton();
             this.btnUpdateGrid = new MaterialSkin.Controls.MaterialButton();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).BeginInit();
             this.materialCard1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvCourses
@@ -103,7 +103,7 @@ namespace Presentation
             this.dgvCourses.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvCourses.EnableHeadersVisualStyles = false;
             this.dgvCourses.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvCourses.Location = new System.Drawing.Point(60, 78);
+            this.dgvCourses.Location = new System.Drawing.Point(36, 84);
             this.dgvCourses.MultiSelect = false;
             this.dgvCourses.Name = "dgvCourses";
             this.dgvCourses.ReadOnly = true;
@@ -111,7 +111,7 @@ namespace Presentation
             this.dgvCourses.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvCourses.RowTemplate.Height = 35;
             this.dgvCourses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCourses.Size = new System.Drawing.Size(673, 383);
+            this.dgvCourses.Size = new System.Drawing.Size(673, 395);
             this.dgvCourses.TabIndex = 0;
             // 
             // Curso
@@ -149,7 +149,7 @@ namespace Presentation
             this.monthCalendar.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
             this.monthCalendar.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.monthCalendar.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.monthCalendar.Location = new System.Drawing.Point(784, 80);
+            this.monthCalendar.Location = new System.Drawing.Point(738, 84);
             this.monthCalendar.Margin = new System.Windows.Forms.Padding(0);
             this.monthCalendar.MaximumSize = new System.Drawing.Size(248, 162);
             this.monthCalendar.MinimumSize = new System.Drawing.Size(248, 162);
@@ -163,7 +163,7 @@ namespace Presentation
             // 
             this.menuStrip1.Location = new System.Drawing.Point(3, 64);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1094, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1012, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -174,13 +174,38 @@ namespace Presentation
             this.materialCard1.Controls.Add(this.chart1);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(784, 256);
+            this.materialCard1.Location = new System.Drawing.Point(739, 261);
             this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(251, 217);
             this.materialCard1.TabIndex = 4;
+            // 
+            // chart2
+            // 
+            this.chart2.BackColor = System.Drawing.Color.Transparent;
+            this.chart2.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.Transparent;
+            legend1.HeaderSeparatorColor = System.Drawing.Color.Transparent;
+            legend1.ItemColumnSeparatorColor = System.Drawing.Color.Transparent;
+            legend1.Name = "Legend1";
+            legend1.ShadowColor = System.Drawing.Color.Transparent;
+            this.chart2.Legends.Add(legend1);
+            this.chart2.Location = new System.Drawing.Point(-8, 117);
+            this.chart2.Name = "chart2";
+            series1.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series1.ChartArea = "ChartArea1";
+            series1.LabelForeColor = System.Drawing.Color.Transparent;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.ShadowColor = System.Drawing.Color.Transparent;
+            this.chart2.Series.Add(series1);
+            this.chart2.Size = new System.Drawing.Size(248, 92);
+            this.chart2.TabIndex = 7;
+            this.chart2.Text = "chart2";
             // 
             // chart1
             // 
@@ -192,7 +217,7 @@ namespace Presentation
             this.chart1.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(-13, 14);
+            this.chart1.Location = new System.Drawing.Point(-21, 18);
             this.chart1.Margin = new System.Windows.Forms.Padding(0);
             this.chart1.Name = "chart1";
             series2.BackSecondaryColor = System.Drawing.Color.Transparent;
@@ -220,7 +245,7 @@ namespace Presentation
             this.btnAdmin.ForeColor = System.Drawing.Color.Black;
             this.btnAdmin.HighEmphasis = true;
             this.btnAdmin.Icon = null;
-            this.btnAdmin.Location = new System.Drawing.Point(60, 470);
+            this.btnAdmin.Location = new System.Drawing.Point(36, 491);
             this.btnAdmin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAdmin.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdmin.Name = "btnAdmin";
@@ -242,7 +267,7 @@ namespace Presentation
             this.btnUpdateGrid.Depth = 0;
             this.btnUpdateGrid.HighEmphasis = true;
             this.btnUpdateGrid.Icon = null;
-            this.btnUpdateGrid.Location = new System.Drawing.Point(200, 470);
+            this.btnUpdateGrid.Location = new System.Drawing.Point(176, 491);
             this.btnUpdateGrid.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnUpdateGrid.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUpdateGrid.Name = "btnUpdateGrid";
@@ -255,37 +280,12 @@ namespace Presentation
             this.btnUpdateGrid.UseVisualStyleBackColor = true;
             this.btnUpdateGrid.Click += new System.EventHandler(this.btnUpdateGrid_Click);
             // 
-            // chart2
-            // 
-            this.chart2.BackColor = System.Drawing.Color.Transparent;
-            this.chart2.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea1.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea1);
-            legend1.BackColor = System.Drawing.Color.Transparent;
-            legend1.HeaderSeparatorColor = System.Drawing.Color.Transparent;
-            legend1.ItemColumnSeparatorColor = System.Drawing.Color.Transparent;
-            legend1.Name = "Legend1";
-            legend1.ShadowColor = System.Drawing.Color.Transparent;
-            this.chart2.Legends.Add(legend1);
-            this.chart2.Location = new System.Drawing.Point(0, 113);
-            this.chart2.Name = "chart2";
-            series1.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series1.ChartArea = "ChartArea1";
-            series1.LabelForeColor = System.Drawing.Color.Transparent;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.ShadowColor = System.Drawing.Color.Transparent;
-            this.chart2.Series.Add(series1);
-            this.chart2.Size = new System.Drawing.Size(248, 92);
-            this.chart2.TabIndex = 7;
-            this.chart2.Text = "chart2";
-            // 
             // Home
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1100, 550);
+            this.ClientSize = new System.Drawing.Size(1018, 550);
             this.Controls.Add(this.btnUpdateGrid);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.materialCard1);
@@ -295,7 +295,7 @@ namespace Presentation
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(1100, 550);
-            this.MinimumSize = new System.Drawing.Size(1100, 514);
+            this.MinimumSize = new System.Drawing.Size(100, 550);
             this.Name = "Home";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -304,8 +304,8 @@ namespace Presentation
             this.Load += new System.EventHandler(this.Home_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).EndInit();
             this.materialCard1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
