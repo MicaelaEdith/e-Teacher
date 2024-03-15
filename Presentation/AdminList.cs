@@ -208,8 +208,16 @@ namespace Presentation
             {
                 if (cbxAdd.SelectedIndex > 0)
                 {
+                    listStudents = courses.listStudents(AppData.id);
+
                     List<Student> list = students.ListStudentsAvailable();
                     int index = cbxAdd.SelectedIndex;
+                    
+                    foreach(var student in listStudents)
+                    {
+                        if (list[index].Id == student.Id)
+                            return;
+                    }      
                     students.AddCourse(list[index].Id, AppData.id);
                     Details();
                 }

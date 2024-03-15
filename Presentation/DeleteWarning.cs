@@ -24,7 +24,7 @@ namespace Presentation
                 CoursesManager cm = new CoursesManager();
                 lblCourse.Visible = true;
                 lblStudent.Visible = false;
-                lblCourse.Text = "Curso/Materia: "+ cm.findNameByid(AppData.id);
+                lblCourse.Text = "Curso/Materia: "+ cm.findNameByid(AppData.id) + " - id: "+AppData.id;
 
             }
             else
@@ -32,7 +32,7 @@ namespace Presentation
                 StudentsManager sm = new StudentsManager();
                 lblCourse.Visible = false;
                 lblStudent.Visible = true;
-                lblStudent.Text = "Alumno: " + sm.findNameByid(AppData.id);
+                lblStudent.Text = "Alumno: " + sm.findNameByid(AppData.id) + " - id: " + AppData.id; ;
             }
         }
 

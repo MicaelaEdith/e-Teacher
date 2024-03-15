@@ -147,26 +147,30 @@ namespace Business
             return name;
         }
 
-        public void AddStudent(string name, string lastName)
+        public int AddStudent(string name, string lastName)
         {
             DataAccess data = new DataAccess();
+            int studentId = -1;
+
             try
             {
                 data.Query("insert into alumnos values ('" + name + "','" + lastName + "',1)");
                 data.Insert();
 
+                data.Query("SELECT SCOPE_IDENTITY()");
+                studentId = data.GetScalarValue<int>();
+                Console.WriteLine(studentId);
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally
             {
-
                 data.closeConnection();
             }
 
+            return studentId;
         }
 
         public void Delete(int id)
@@ -291,6 +295,38 @@ namespace Business
             }
 
         }
+
+        public Dictionary<string, int> ListCoursesWithMostStudents()
+        {
+            Dictionary<string, int> coursesWithStudents = new Dictionary<string, int>();
+            DataAccess data = new DataAccess();
+
+            try
+            {
+                data.Query("SELECT c.curso_materia, COUNT(ca.alumno) AS num_students FROM cursos_alumnos ca JOIN cursos c ON ca.curso = c.id GROUP BY c.curso_materia ORDER BY num_students DESC");
+
+                data.Read();
+
+                while (data.Reader.Read())
+                {
+                    string courseName = (string)data.Reader["curso_materia"];
+                    int numStudents = (int)data.Reader["num_students"];
+
+                    coursesWithStudents.Add(courseName, numStudents);
+                }
+
+                return coursesWithStudents;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                data.closeConnection();
+            }
+        }
+
     }
 
 }

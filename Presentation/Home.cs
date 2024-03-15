@@ -116,7 +116,7 @@ namespace Presentation
         {
             CoursesManager coursesManager = new CoursesManager();
             Dictionary<string, int> countCourses = coursesManager.CountCourses();
-            
+
             if (chart1.Series.Any())
             {
                 chart1.Series.Clear();
@@ -132,34 +132,58 @@ namespace Presentation
                 DataPoint point = new DataPoint();
                 point.Label = $"{kvp.Key} ({kvp.Value})";
                 point.SetValueY(kvp.Value);
+                point.LabelBackColor = Color.White;
                 serieC.Points.Add(point);
             }
 
             chart1.Series.Add(serieC);
 
-            if (serieC.Points.Count > 0)
-            {
-                foreach (var point in serieC.Points)
-                {
-                    point["PieLabelStyle"] = "Disabled";
-                }
-            }
-            Legend legend = chart1.Legends[0];
+            serieC.IsVisibleInLegend = false;
 
+            Legend legend = chart1.Legends[0];
             legend.BackColor = System.Drawing.Color.Transparent;
             legend.ForeColor = System.Drawing.Color.White;
         }
 
-        private void AddDataChart2() {
 
+        private void AddDataChart2()
+        {
             chart2.BackColor = System.Drawing.Color.Transparent;
             chart2.ChartAreas[0].BackColor = Color.Transparent;
 
             Legend legend = chart2.Legends[0];
-
             legend.BackColor = System.Drawing.Color.Transparent;
             legend.ForeColor = System.Drawing.Color.White;
+
+            StudentsManager sm = new StudentsManager();
+            Dictionary<string, int> coursesWithStudents = sm.ListCoursesWithMostStudents();
+
+            chart2.Series.Clear();
+            chart2.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            chart2.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+
+            Series series = new Series();
+            series.ChartType = SeriesChartType.Column;
+
+            foreach (var course in coursesWithStudents)
+            {
+                series.Points.AddXY(course.Key, course.Value);
+            }
+
+            chart2.Series.Add(series);
+            series.IsVisibleInLegend = false;
+
+            // Agregar título al eje Y
+            chart2.ChartAreas[0].AxisY.Title = "Alumnos";
+            chart2.ChartAreas[0].AxisY.TitleForeColor = Color.White;
+
+            // Personalizar líneas y texto del eje Y
+            chart2.ChartAreas[0].AxisY.LineColor = Color.White;
+            chart2.ChartAreas[0].AxisY.LabelStyle.ForeColor = Color.White;
+            chart2.ChartAreas[0].AxisX.LineColor = Color.White;
+            chart2.ChartAreas[0].AxisX.LabelStyle.ForeColor = Color.White;
         }
+
     }
 }
 

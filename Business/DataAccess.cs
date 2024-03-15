@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-
+using System.Data;
 
 namespace Business
 {
@@ -70,10 +70,32 @@ namespace Business
 
         public void closeConnection()
         {
-            if (reader != null)
-                reader.Close();
-
-            connection.Close();
+            try
+            {
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (connection != null && connection.State != ConnectionState.Closed)
+                    connection.Close();
+            }
+        }
+        public T GetScalarValue<T>()
+        {
+            object result = command.ExecuteScalar();
+            if (result != null && result != DBNull.Value)
+            {
+                return (T)Convert.ChangeType(result, typeof(T));
+            }
+            else
+            {
+                throw new InvalidOperationException("Scalar value is null or DBNull.");
+            }
         }
     }
 }

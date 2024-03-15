@@ -39,6 +39,7 @@ namespace Presentation
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSave = new MaterialSkin.Controls.MaterialButton();
             this.btnCancel = new MaterialSkin.Controls.MaterialButton();
+            this.cbxCourses = new MaterialSkin.Controls.MaterialComboBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -49,7 +50,7 @@ namespace Presentation
             this.lblLastName.AutoSize = true;
             this.lblLastName.Depth = 0;
             this.lblLastName.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblLastName.Location = new System.Drawing.Point(26, 15);
+            this.lblLastName.Location = new System.Drawing.Point(42, 27);
             this.lblLastName.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(70, 19);
@@ -60,7 +61,7 @@ namespace Presentation
             // 
             this.panel2.Controls.Add(this.lblLastName);
             this.panel2.Controls.Add(this.txtLastName);
-            this.panel2.Location = new System.Drawing.Point(14, 77);
+            this.panel2.Location = new System.Drawing.Point(30, 89);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(414, 64);
             this.panel2.TabIndex = 6;
@@ -72,7 +73,7 @@ namespace Presentation
             this.txtLastName.Depth = 0;
             this.txtLastName.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtLastName.LeadingIcon = null;
-            this.txtLastName.Location = new System.Drawing.Point(97, 9);
+            this.txtLastName.Location = new System.Drawing.Point(113, 21);
             this.txtLastName.MaxLength = 50;
             this.txtLastName.MouseState = MaterialSkin.MouseState.OUT;
             this.txtLastName.Multiline = false;
@@ -88,7 +89,7 @@ namespace Presentation
             this.lblName.AutoSize = true;
             this.lblName.Depth = 0;
             this.lblName.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblName.Location = new System.Drawing.Point(32, 33);
+            this.lblName.Location = new System.Drawing.Point(48, 45);
             this.lblName.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(69, 19);
@@ -99,7 +100,7 @@ namespace Presentation
             // 
             this.panel1.Controls.Add(this.txtName);
             this.panel1.Controls.Add(this.lblName);
-            this.panel1.Location = new System.Drawing.Point(10, 1);
+            this.panel1.Location = new System.Drawing.Point(26, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(419, 77);
             this.panel1.TabIndex = 5;
@@ -111,7 +112,7 @@ namespace Presentation
             this.txtName.Depth = 0;
             this.txtName.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtName.LeadingIcon = null;
-            this.txtName.Location = new System.Drawing.Point(101, 25);
+            this.txtName.Location = new System.Drawing.Point(117, 37);
             this.txtName.MaxLength = 50;
             this.txtName.MouseState = MaterialSkin.MouseState.OUT;
             this.txtName.Multiline = false;
@@ -127,7 +128,7 @@ namespace Presentation
             this.lblCourse.AutoSize = true;
             this.lblCourse.Depth = 0;
             this.lblCourse.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblCourse.Location = new System.Drawing.Point(31, 16);
+            this.lblCourse.Location = new System.Drawing.Point(47, 18);
             this.lblCourse.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblCourse.Name = "lblCourse";
             this.lblCourse.Size = new System.Drawing.Size(62, 19);
@@ -136,8 +137,9 @@ namespace Presentation
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.cbxCourses);
             this.panel3.Controls.Add(this.lblCourse);
-            this.panel3.Location = new System.Drawing.Point(14, 140);
+            this.panel3.Location = new System.Drawing.Point(30, 152);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(413, 60);
             this.panel3.TabIndex = 7;
@@ -182,6 +184,29 @@ namespace Presentation
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // cbxCourses
+            // 
+            this.cbxCourses.AutoResize = false;
+            this.cbxCourses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxCourses.Depth = 0;
+            this.cbxCourses.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbxCourses.DropDownHeight = 118;
+            this.cbxCourses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCourses.DropDownWidth = 121;
+            this.cbxCourses.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbxCourses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbxCourses.FormattingEnabled = true;
+            this.cbxCourses.IntegralHeight = false;
+            this.cbxCourses.ItemHeight = 29;
+            this.cbxCourses.Location = new System.Drawing.Point(112, 14);
+            this.cbxCourses.MaxDropDownItems = 4;
+            this.cbxCourses.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbxCourses.Name = "cbxCourses";
+            this.cbxCourses.Size = new System.Drawing.Size(264, 35);
+            this.cbxCourses.StartIndex = 0;
+            this.cbxCourses.TabIndex = 3;
+            this.cbxCourses.UseTallSize = false;
+            // 
             // AdminAddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,5 +246,6 @@ namespace Presentation
         private System.Windows.Forms.Panel panel3;
         private MaterialSkin.Controls.MaterialButton btnSave;
         private MaterialSkin.Controls.MaterialButton btnCancel;
+        private MaterialSkin.Controls.MaterialComboBox cbxCourses;
     }
 }
