@@ -96,7 +96,7 @@ namespace Presentation
 
             for (int i = 0; i < 7; i++)
             {
-                CheckBox checkbox = (CheckBox)Controls.Find("check" + Select[i], true).FirstOrDefault();
+                CheckBox checkbox = (CheckBox)Controls.Find("cbx" + Select[i], true).FirstOrDefault();
 
                 if (checkbox.Checked)
                 {
