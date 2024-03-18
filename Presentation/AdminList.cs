@@ -70,16 +70,12 @@ namespace Presentation
             dgvList.ClearSelection();
             dgvList.CurrentCell = null;
 
-
-
-
         }
         private void UpdateCourses()
         {
             listCourses = courses.ListCourses();
             listAvailableC = courses.ListCoursesAvailable();
             AppData.openPanel = "ListCourses";
-
 
             try
             {
@@ -99,7 +95,6 @@ namespace Presentation
 
                 throw ex;
             }
-
 
         }
 
@@ -146,7 +141,6 @@ namespace Presentation
                     cbxAdd.Items.Add(name);
                     name = "";
                 }
-
             }
             else
             {
@@ -184,8 +178,6 @@ namespace Presentation
                 lblTitle.Visible = true;
                 btnDetails.Text = "Volver";
                 Details();
-
-
             }
             else
             {
@@ -197,7 +189,6 @@ namespace Presentation
                 btnAddData.Visible = false;
                 btnDelete.Visible = false;
                 btnDetails.Text = "Detalle";
-
             }
 
         }
@@ -244,14 +235,12 @@ namespace Presentation
                 {
                     selectedCourses = courses.findByid(idValue);
                     AppData.SelectedItem = selectedCourses;
-
                 }
                 else
                 {
                     selectedStudent = students.findByid(idValue);
                     AppData.SelectedItem = selectedStudent;
                 }
-
             }
         }
 

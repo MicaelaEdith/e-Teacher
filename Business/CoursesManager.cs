@@ -96,7 +96,7 @@ namespace Business
             DataAccess data = new DataAccess();
             try
             {
-                data.Query("insert into cursos values ('" + c.CoursesClasses + "','" + c.Days + "','" + c.Institution + "','" + c.Level + "', 1);");
+                data.Query("insert into cursos values ('" + c.CoursesClasses + "','" + c.Days + "','" + c.Institution + "','" + c.Level + "', 1, 24);");
                 data.Read();
 
             }

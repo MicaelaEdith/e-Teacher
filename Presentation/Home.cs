@@ -47,21 +47,19 @@ namespace Presentation
 
         private void Home_Load(object sender, EventArgs e)
         {
-            UpdateDiary();
             UpdateGrid();
-            AddDataChart1();
-            AddDataChart2();
         }
         private void UpdateGrid()
         {
             CoursesManager courses = new CoursesManager();
-
             dgvCourses.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
             dgvCourses.RowHeadersVisible = false;
+            AddDataChart1();
+            AddDataChart2();
 
             try
             {
-                listCourses = courses.ListCoursesAvailable();
+                listCourses = courses.ListCourses();
                 foreach (Courses c in listCourses)
                 {
 
@@ -81,13 +79,6 @@ namespace Presentation
 
                 throw ex;
             }
-
-
-
-        }
-
-        private void UpdateDiary()
-        {
 
 
 

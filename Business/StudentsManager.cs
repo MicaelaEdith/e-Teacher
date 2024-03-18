@@ -17,7 +17,7 @@ namespace Business
 
             try
             {
-                data.Query("Select id,nombre, apellido from alumnos;");
+                data.Query("Select id,nombre, apellido from alumnos ORDER BY apellido;");
                 data.Read();
 
                 while (data.Reader.Read())
@@ -52,7 +52,7 @@ namespace Business
 
             try
             {
-                data.Query("Select id,nombre, apellido, activo from alumnos where activo=1;");
+                data.Query("Select id,nombre, apellido, activo from alumnos where activo=1 ORDER BY apellido;");
                 data.Read();
 
                 while (data.Reader.Read())
@@ -154,7 +154,7 @@ namespace Business
 
             try
             {
-                data.Query("insert into alumnos values ('" + name + "','" + lastName + "',1)");
+                data.Query("insert into alumnos values ('" + lastName + "','" + name + "',1)");
                 data.Insert();
 
                 data.Query("SELECT SCOPE_IDENTITY()");
