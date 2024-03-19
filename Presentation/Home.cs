@@ -59,12 +59,14 @@ namespace Presentation
 
             try
             {
+                dgvCourses.Rows.Clear();
                 listCourses = courses.ListCourses();
                 foreach (Courses c in listCourses)
                 {
 
                     int rowIndex = dgvCourses.Rows.Add();
                     DataGridViewRow row = dgvCourses.Rows[rowIndex];
+
                     row.Cells[0].Value = c.CoursesClasses.ToUpper();
                     row.Cells[1].Value = c.Days;
                     row.Cells[2].Value = c.Institution;
