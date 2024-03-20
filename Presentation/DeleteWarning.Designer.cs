@@ -76,7 +76,7 @@ namespace Presentation
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnDelete.Size = new System.Drawing.Size(86, 36);
-            this.btnDelete.TabIndex = 2;
+            this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "cancelar";
             this.btnDelete.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnDelete.UseAccentColor = false;
@@ -98,7 +98,7 @@ namespace Presentation
             this.btnAcept.Name = "btnAcept";
             this.btnAcept.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnAcept.Size = new System.Drawing.Size(86, 36);
-            this.btnAcept.TabIndex = 3;
+            this.btnAcept.TabIndex = 0;
             this.btnAcept.Text = "Aceptar";
             this.btnAcept.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnAcept.UseAccentColor = false;

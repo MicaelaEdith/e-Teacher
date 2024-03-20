@@ -37,9 +37,9 @@ namespace Presentation
             this.txtName = new MaterialSkin.Controls.MaterialTextBox();
             this.lblCourse = new MaterialSkin.Controls.MaterialLabel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cbxCourses = new MaterialSkin.Controls.MaterialComboBox();
             this.btnSave = new MaterialSkin.Controls.MaterialButton();
             this.btnCancel = new MaterialSkin.Controls.MaterialButton();
-            this.cbxCourses = new MaterialSkin.Controls.MaterialComboBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -79,7 +79,7 @@ namespace Presentation
             this.txtLastName.Multiline = false;
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(264, 36);
-            this.txtLastName.TabIndex = 4;
+            this.txtLastName.TabIndex = 0;
             this.txtLastName.Text = "";
             this.txtLastName.TrailingIcon = null;
             this.txtLastName.UseTallSize = false;
@@ -118,7 +118,7 @@ namespace Presentation
             this.txtName.Multiline = false;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(264, 36);
-            this.txtName.TabIndex = 3;
+            this.txtName.TabIndex = 0;
             this.txtName.Text = "";
             this.txtName.TrailingIcon = null;
             this.txtName.UseTallSize = false;
@@ -144,6 +144,29 @@ namespace Presentation
             this.panel3.Size = new System.Drawing.Size(413, 60);
             this.panel3.TabIndex = 7;
             // 
+            // cbxCourses
+            // 
+            this.cbxCourses.AutoResize = false;
+            this.cbxCourses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxCourses.Depth = 0;
+            this.cbxCourses.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbxCourses.DropDownHeight = 118;
+            this.cbxCourses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCourses.DropDownWidth = 121;
+            this.cbxCourses.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbxCourses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbxCourses.FormattingEnabled = true;
+            this.cbxCourses.IntegralHeight = false;
+            this.cbxCourses.ItemHeight = 29;
+            this.cbxCourses.Location = new System.Drawing.Point(112, 14);
+            this.cbxCourses.MaxDropDownItems = 4;
+            this.cbxCourses.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbxCourses.Name = "cbxCourses";
+            this.cbxCourses.Size = new System.Drawing.Size(264, 35);
+            this.cbxCourses.StartIndex = 0;
+            this.cbxCourses.TabIndex = 0;
+            this.cbxCourses.UseTallSize = false;
+            // 
             // btnSave
             // 
             this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -157,7 +180,7 @@ namespace Presentation
             this.btnSave.Name = "btnSave";
             this.btnSave.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnSave.Size = new System.Drawing.Size(88, 36);
-            this.btnSave.TabIndex = 8;
+            this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Guardar";
             this.btnSave.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnSave.UseAccentColor = false;
@@ -177,35 +200,12 @@ namespace Presentation
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnCancel.Size = new System.Drawing.Size(96, 36);
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnCancel.UseAccentColor = false;
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // cbxCourses
-            // 
-            this.cbxCourses.AutoResize = false;
-            this.cbxCourses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbxCourses.Depth = 0;
-            this.cbxCourses.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbxCourses.DropDownHeight = 118;
-            this.cbxCourses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxCourses.DropDownWidth = 121;
-            this.cbxCourses.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cbxCourses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbxCourses.FormattingEnabled = true;
-            this.cbxCourses.IntegralHeight = false;
-            this.cbxCourses.ItemHeight = 29;
-            this.cbxCourses.Location = new System.Drawing.Point(112, 14);
-            this.cbxCourses.MaxDropDownItems = 4;
-            this.cbxCourses.MouseState = MaterialSkin.MouseState.OUT;
-            this.cbxCourses.Name = "cbxCourses";
-            this.cbxCourses.Size = new System.Drawing.Size(264, 35);
-            this.cbxCourses.StartIndex = 0;
-            this.cbxCourses.TabIndex = 3;
-            this.cbxCourses.UseTallSize = false;
             // 
             // AdminAddStudent
             // 
@@ -222,7 +222,7 @@ namespace Presentation
             this.MaximumSize = new System.Drawing.Size(578, 443);
             this.MinimumSize = new System.Drawing.Size(578, 443);
             this.Name = "AdminAddStudent";
-            this.Text = "AdminAddStudent";
+            this.Text = "0";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

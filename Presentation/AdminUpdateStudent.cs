@@ -35,6 +35,8 @@ namespace Presentation
             txtLastName.Text = student.LastName;
             txtLastName.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txtLastName.Width, txtLastName.Height, 5, 5));
             txtName.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txtName.Width, txtName.Height, 5, 5));
+            cbxCourses.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, cbxCourses.Width, cbxCourses.Height, 5, 5));
+            cbxCoursesData();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -45,6 +47,8 @@ namespace Presentation
             student.LastName = txtLastName.Text;
 
             StudentsManager sm = new StudentsManager();
+            CoursesManager cm = new CoursesManager();
+            List<Courses> list = cm.ListCoursesAvailable();
 
             if (txtLastName.Text != "" && txtLastName != null && txtName.Text != "" && txtName != null)
             {
@@ -53,6 +57,28 @@ namespace Presentation
             }
             else
                 lblWarning.Visible = true;
+
+            if (cbxCourses.SelectedIndex > 0)
+            {
+                sm.AddCourse(student.Id, list[cbxCourses.SelectedIndex].Id);
+
+            }
+
+
+
+        }
+        private void cbxCoursesData()
+        {
+            CoursesManager cm = new CoursesManager();
+            List<Courses> list = cm.ListCoursesAvailable();
+            string name = "";
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                name += list[i].CoursesClasses + " - " + list[i].Institution;
+                cbxCourses.Items.Add(name);
+                name = "";
+            }
 
         }
 

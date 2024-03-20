@@ -45,11 +45,11 @@ namespace Presentation
             this.Nivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.lblChart1 = new MaterialSkin.Controls.MaterialLabel();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnAdmin = new MaterialSkin.Controls.MaterialButton();
             this.btnUpdateGrid = new MaterialSkin.Controls.MaterialButton();
-            this.lblChart1 = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).BeginInit();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
@@ -146,7 +146,7 @@ namespace Presentation
             // 
             this.menuStrip1.Location = new System.Drawing.Point(3, 64);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1003, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1019, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -165,6 +165,18 @@ namespace Presentation
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(251, 394);
             this.materialCard1.TabIndex = 4;
+            // 
+            // lblChart1
+            // 
+            this.lblChart1.AutoSize = true;
+            this.lblChart1.Depth = 0;
+            this.lblChart1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblChart1.Location = new System.Drawing.Point(26, 16);
+            this.lblChart1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblChart1.Name = "lblChart1";
+            this.lblChart1.Size = new System.Drawing.Size(150, 19);
+            this.lblChart1.TabIndex = 8;
+            this.lblChart1.Text = "Cursos más dictados";
             // 
             // chart2
             // 
@@ -236,7 +248,7 @@ namespace Presentation
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnAdmin.Size = new System.Drawing.Size(118, 36);
-            this.btnAdmin.TabIndex = 5;
+            this.btnAdmin.TabIndex = 0;
             this.btnAdmin.Text = "Administrar";
             this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAdmin.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -258,31 +270,19 @@ namespace Presentation
             this.btnUpdateGrid.Name = "btnUpdateGrid";
             this.btnUpdateGrid.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnUpdateGrid.Size = new System.Drawing.Size(114, 36);
-            this.btnUpdateGrid.TabIndex = 6;
+            this.btnUpdateGrid.TabIndex = 1;
             this.btnUpdateGrid.Text = "Actualizar";
             this.btnUpdateGrid.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnUpdateGrid.UseAccentColor = false;
             this.btnUpdateGrid.UseVisualStyleBackColor = true;
             this.btnUpdateGrid.Click += new System.EventHandler(this.btnUpdateGrid_Click);
             // 
-            // lblChart1
-            // 
-            this.lblChart1.AutoSize = true;
-            this.lblChart1.Depth = 0;
-            this.lblChart1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblChart1.Location = new System.Drawing.Point(26, 16);
-            this.lblChart1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblChart1.Name = "lblChart1";
-            this.lblChart1.Size = new System.Drawing.Size(150, 19);
-            this.lblChart1.TabIndex = 8;
-            this.lblChart1.Text = "Cursos más dictados";
-            // 
             // Home
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1009, 550);
+            this.ClientSize = new System.Drawing.Size(1025, 550);
             this.Controls.Add(this.btnUpdateGrid);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.materialCard1);

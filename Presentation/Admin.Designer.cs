@@ -63,7 +63,7 @@ namespace Presentation
             this.cbxItems.Name = "cbxItems";
             this.cbxItems.Size = new System.Drawing.Size(133, 35);
             this.cbxItems.StartIndex = 0;
-            this.cbxItems.TabIndex = 3;
+            this.cbxItems.TabIndex = 0;
             this.cbxItems.UseTallSize = false;
             this.cbxItems.SelectedIndexChanged += new System.EventHandler(this.cbxItems_SelectedIndexChanged);
             // 
@@ -106,7 +106,7 @@ namespace Presentation
             this.swAvailable.Name = "swAvailable";
             this.swAvailable.Ripple = true;
             this.swAvailable.Size = new System.Drawing.Size(58, 37);
-            this.swAvailable.TabIndex = 8;
+            this.swAvailable.TabIndex = 5;
             this.swAvailable.UseVisualStyleBackColor = true;
             this.swAvailable.Visible = false;
             this.swAvailable.CheckedChanged += new System.EventHandler(this.swAvailable_CheckedChanged);
@@ -125,7 +125,7 @@ namespace Presentation
             this.btnList.Name = "btnList";
             this.btnList.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnList.Size = new System.Drawing.Size(133, 38);
-            this.btnList.TabIndex = 7;
+            this.btnList.TabIndex = 1;
             this.btnList.Text = "Listar";
             this.btnList.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnList.UseAccentColor = false;
@@ -168,7 +168,7 @@ namespace Presentation
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnAdd.Size = new System.Drawing.Size(133, 38);
-            this.btnAdd.TabIndex = 5;
+            this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Agregar";
             this.btnAdd.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnAdd.UseAccentColor = false;
@@ -189,7 +189,7 @@ namespace Presentation
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnUpdate.Size = new System.Drawing.Size(133, 38);
-            this.btnUpdate.TabIndex = 1;
+            this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Modificar";
             this.btnUpdate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnUpdate.UseAccentColor = false;

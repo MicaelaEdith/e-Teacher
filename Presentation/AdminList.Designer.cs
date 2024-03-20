@@ -60,7 +60,7 @@ namespace Presentation
             this.btnDetails.Name = "btnDetails";
             this.btnDetails.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnDetails.Size = new System.Drawing.Size(122, 34);
-            this.btnDetails.TabIndex = 3;
+            this.btnDetails.TabIndex = 2;
             this.btnDetails.Text = "Detalle";
             this.btnDetails.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnDetails.UseAccentColor = false;
@@ -95,7 +95,7 @@ namespace Presentation
             this.btnAddData.Name = "btnAddData";
             this.btnAddData.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnAddData.Size = new System.Drawing.Size(122, 34);
-            this.btnAddData.TabIndex = 7;
+            this.btnAddData.TabIndex = 4;
             this.btnAddData.Text = "agregar";
             this.btnAddData.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnAddData.UseAccentColor = false;
@@ -150,7 +150,7 @@ namespace Presentation
             this.dgvData.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvData.Size = new System.Drawing.Size(541, 269);
-            this.dgvData.TabIndex = 5;
+            this.dgvData.TabIndex = 1;
             this.dgvData.Visible = false;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             // 
@@ -203,7 +203,7 @@ namespace Presentation
             this.dgvList.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvList.Size = new System.Drawing.Size(541, 311);
-            this.dgvList.TabIndex = 8;
+            this.dgvList.TabIndex = 0;
             this.dgvList.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_RowEnter_1);
             // 
             // cbxAdd
@@ -226,7 +226,7 @@ namespace Presentation
             this.cbxAdd.Name = "cbxAdd";
             this.cbxAdd.Size = new System.Drawing.Size(541, 35);
             this.cbxAdd.StartIndex = 0;
-            this.cbxAdd.TabIndex = 6;
+            this.cbxAdd.TabIndex = 3;
             this.cbxAdd.UseTallSize = false;
             this.cbxAdd.Visible = false;
             // 
@@ -245,7 +245,7 @@ namespace Presentation
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnDelete.Size = new System.Drawing.Size(122, 34);
-            this.btnDelete.TabIndex = 9;
+            this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnDelete.UseAccentColor = false;

@@ -99,7 +99,7 @@ namespace Presentation
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnCancel.Size = new System.Drawing.Size(96, 36);
-            this.btnCancel.TabIndex = 15;
+            this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnCancel.UseAccentColor = false;
@@ -119,7 +119,7 @@ namespace Presentation
             this.btnSave.Name = "btnSave";
             this.btnSave.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnSave.Size = new System.Drawing.Size(88, 36);
-            this.btnSave.TabIndex = 14;
+            this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Guardar";
             this.btnSave.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnSave.UseAccentColor = false;
@@ -163,7 +163,7 @@ namespace Presentation
             this.txtCourse.Multiline = false;
             this.txtCourse.Name = "txtCourse";
             this.txtCourse.Size = new System.Drawing.Size(324, 36);
-            this.txtCourse.TabIndex = 2;
+            this.txtCourse.TabIndex = 0;
             this.txtCourse.Text = "";
             this.txtCourse.TrailingIcon = null;
             this.txtCourse.UseTallSize = false;
@@ -191,7 +191,7 @@ namespace Presentation
             this.txtInstitute.Multiline = false;
             this.txtInstitute.Name = "txtInstitute";
             this.txtInstitute.Size = new System.Drawing.Size(324, 36);
-            this.txtInstitute.TabIndex = 7;
+            this.txtInstitute.TabIndex = 0;
             this.txtInstitute.Text = "";
             this.txtInstitute.TrailingIcon = null;
             this.txtInstitute.UseTallSize = false;
@@ -231,7 +231,7 @@ namespace Presentation
             this.txtLevel.Multiline = false;
             this.txtLevel.Name = "txtLevel";
             this.txtLevel.Size = new System.Drawing.Size(324, 36);
-            this.txtLevel.TabIndex = 9;
+            this.txtLevel.TabIndex = 0;
             this.txtLevel.Text = "";
             this.txtLevel.TrailingIcon = null;
             this.txtLevel.UseTallSize = false;
@@ -292,7 +292,7 @@ namespace Presentation
             this.cbxHs.Name = "cbxHs";
             this.cbxHs.Size = new System.Drawing.Size(136, 35);
             this.cbxHs.StartIndex = 0;
-            this.cbxHs.TabIndex = 25;
+            this.cbxHs.TabIndex = 0;
             this.cbxHs.UseTallSize = false;
             // 
             // cbxHs2
@@ -315,7 +315,7 @@ namespace Presentation
             this.cbxHs2.Name = "cbxHs2";
             this.cbxHs2.Size = new System.Drawing.Size(139, 35);
             this.cbxHs2.StartIndex = 0;
-            this.cbxHs2.TabIndex = 26;
+            this.cbxHs2.TabIndex = 1;
             this.cbxHs2.UseTallSize = false;
             // 
             // panel3
@@ -345,7 +345,7 @@ namespace Presentation
             this.cbxDomingo.ReadOnly = false;
             this.cbxDomingo.Ripple = true;
             this.cbxDomingo.Size = new System.Drawing.Size(100, 37);
-            this.cbxDomingo.TabIndex = 14;
+            this.cbxDomingo.TabIndex = 6;
             this.cbxDomingo.Text = "Domingo";
             this.cbxDomingo.UseVisualStyleBackColor = true;
             // 
@@ -361,7 +361,7 @@ namespace Presentation
             this.cbxSabado.ReadOnly = false;
             this.cbxSabado.Ripple = true;
             this.cbxSabado.Size = new System.Drawing.Size(90, 37);
-            this.cbxSabado.TabIndex = 13;
+            this.cbxSabado.TabIndex = 5;
             this.cbxSabado.Text = "Sábado";
             this.cbxSabado.UseVisualStyleBackColor = true;
             // 
@@ -378,7 +378,7 @@ namespace Presentation
             this.cbxViernes.ReadOnly = false;
             this.cbxViernes.Ripple = true;
             this.cbxViernes.Size = new System.Drawing.Size(87, 37);
-            this.cbxViernes.TabIndex = 12;
+            this.cbxViernes.TabIndex = 4;
             this.cbxViernes.Text = "Viernes";
             this.cbxViernes.UseVisualStyleBackColor = false;
             // 
@@ -394,7 +394,7 @@ namespace Presentation
             this.cbxJueves.ReadOnly = false;
             this.cbxJueves.Ripple = true;
             this.cbxJueves.Size = new System.Drawing.Size(85, 37);
-            this.cbxJueves.TabIndex = 11;
+            this.cbxJueves.TabIndex = 3;
             this.cbxJueves.Text = "Jueves";
             this.cbxJueves.UseVisualStyleBackColor = true;
             // 
@@ -410,7 +410,7 @@ namespace Presentation
             this.cbxMiercoles.ReadOnly = false;
             this.cbxMiercoles.Ripple = true;
             this.cbxMiercoles.Size = new System.Drawing.Size(103, 37);
-            this.cbxMiercoles.TabIndex = 10;
+            this.cbxMiercoles.TabIndex = 2;
             this.cbxMiercoles.Text = "Miércoles";
             this.cbxMiercoles.UseVisualStyleBackColor = true;
             // 
@@ -426,7 +426,7 @@ namespace Presentation
             this.cbxMartes.ReadOnly = false;
             this.cbxMartes.Ripple = true;
             this.cbxMartes.Size = new System.Drawing.Size(84, 37);
-            this.cbxMartes.TabIndex = 9;
+            this.cbxMartes.TabIndex = 1;
             this.cbxMartes.Text = "Martes";
             this.cbxMartes.UseVisualStyleBackColor = true;
             // 
@@ -442,7 +442,7 @@ namespace Presentation
             this.cbxLunes.ReadOnly = false;
             this.cbxLunes.Ripple = true;
             this.cbxLunes.Size = new System.Drawing.Size(78, 37);
-            this.cbxLunes.TabIndex = 4;
+            this.cbxLunes.TabIndex = 0;
             this.cbxLunes.Text = "Lunes";
             this.cbxLunes.UseVisualStyleBackColor = true;
             // 
