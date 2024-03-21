@@ -1,0 +1,5 @@
+![2_Mesa de trabajo 1](https://github.com/MicaelaEdith/e-Teacher/assets/109880462/5cc150e5-5df5-4e7f-86ef-ae78df42e77c)
+![2-02](https://github.com/MicaelaEdith/e-Teacher/assets/109880462/69fcf2b1-a7d2-401b-9f2d-430998e1cc2c)
+![2-03](https://github.com/MicaelaEdith/e-Teacher/assets/109880462/434a8293-cf95-4829-abe4-28ef0b02956a)
+![2-05](https://github.com/MicaelaEdith/e-Teacher/assets/109880462/979577ed-abb6-4260-8d82-5d3d5d0f8d86)
+![2-06](https://github.com/MicaelaEdith/e-Teacher/assets/109880462/4fbd68b3-a95d-4c6e-8cfc-480ab871e02d)
